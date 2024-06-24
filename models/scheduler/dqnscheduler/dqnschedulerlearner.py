@@ -129,7 +129,7 @@ class Scheduler(Scheduler):
                 'state_size': self.state_size,
                 'action_size': self.action_size,
                 'model_state_dict': self.model.state_dict(),
-            }, f"models/dqn_model_{self.steps_done}.pth")
+            }, f"'/content/drive/MyDrive/simnet/extensions/sim5gnr/gui/models/dqn_model.pth")
         #print(f"State: {state}, Action: {action}, Reward: {reward}, Next state: {next_state}", file=sys.stderr)
 
         self.steps_done += 1
