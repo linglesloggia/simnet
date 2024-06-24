@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.sandbox.meanvar_calc</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.sandbox.html">sandbox</a></code><wbr></wbr>.<code><a href="PyWiSim.sandbox.meanvar_calc.html">meanvar_calc</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id96">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#finalize">finalize</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fn_test">fn_test</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#mean_val_n">mean_val_n</a></code></td>
+    <td>Attempts to calculate mean and M2 efficiently.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#update">update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ls_n">ls_n</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#vals">vals</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="PyWiSim.sandbox.meanvar_calc.finalize">
+    
+  </a>
+  <a name="finalize">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">finalize</span>(existing_aggregate):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="PyWiSim.sandbox.meanvar_calc.fn_test">
+    
+  </a>
+  <a name="fn_test">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fn_test</span>(vals, n_size):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="PyWiSim.sandbox.meanvar_calc.mean_val_n">
+    
+  </a>
+  <a name="mean_val_n">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mean_val_n</span>(med, new_val):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Attempts to calculate mean and M2 efficiently.</p>
+<p>Must subtract contribution of first element in sample, and add contribution of last element in sample.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">med</span></td><td class="fieldArgDesc">mean of actual sample.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_val</span></td><td class="fieldArgDesc">new value to add to sample.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">(mean, m2) for new sample.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="PyWiSim.sandbox.meanvar_calc.update">
+    
+  </a>
+  <a name="update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update</span>(existing_aggregate, new_value):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.meanvar_calc.ls_n">
+    
+  </a>
+  <a name="ls_n">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_n</span>: <code>list[<wbr></wbr>int]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.meanvar_calc.vals">
+    
+  </a>
+  <a name="vals">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">vals</span>: <code>list[<wbr></wbr>int]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

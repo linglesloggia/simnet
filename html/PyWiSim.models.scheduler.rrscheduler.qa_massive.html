@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.models.scheduler.rrscheduler.qa_massive</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.models.html">models</a></code><wbr></wbr>.<code><a href="PyWiSim.models.scheduler.html">scheduler</a></code><wbr></wbr>.<code><a href="PyWiSim.models.scheduler.rrscheduler.html">rrscheduler</a></code><wbr></wbr>.<code><a href="PyWiSim.models.scheduler.rrscheduler.qa_massive.html">qa_massive</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Tests a round robin scheduler.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id66">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#run_sim">run_sim</a></code></td>
+    <td><span class="undocumented">No summary</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#setup_sim">setup_sim</a></code></td>
+    <td>Creates an example of a simulation scenery with default values.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#test_mass_run">test_mass_run</a></code></td>
+    <td>Setup and run a long simulation with many users, run.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#test_mass_vrfy">test_mass_vrfy</a></code></td>
+    <td>Setup and run a long simulation with many users, verify.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ls_tests">ls_tests</a></code></td>
+    <td>List of tests to show in menu.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#op">op</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="PyWiSim.models.scheduler.rrscheduler.qa_massive.run_sim">
+    
+  </a>
+  <a name="run_sim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run_sim</span>(time_sim=5, nr_usreqs=[<wbr></wbr>1, <wbr></wbr>1], loss_prob=0.2, gen_size=[<wbr></wbr>40, <wbr></wbr>40], gen_delay=[<wbr></wbr>1, <wbr></wbr>1], ug_pkts=[<wbr></wbr>2, <wbr></wbr>3], ug_maxlen=[<wbr></wbr>3, <wbr></wbr>3], ug_keep=[<wbr></wbr>True, <wbr></wbr>True], nr_res=[<wbr></wbr>4, <wbr></wbr>4], assgn_mat=[], trans_delay=1, dbg_setup=[<wbr></wbr>True, <wbr></wbr>True, <wbr></wbr>True], dbg_run=True, ls_scene=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Runs simulation configured according to received parameters. If parameter ls_scene is not given (ls_scene=None), a Setup object is created with the parameters given. If values of attributes not present in the parameters list need to be changed, a Setup object may be created first, its attribute values adjusted as necessary using the Setup function change_attrs(), and then invoke this function with the ls_scene parameter list. In this case, parameters nr_usreqs, nr_res, and assgn_mat are irrelevant, sin ce they were previously used in the creation of the Setup object. Parameter ls_scene is a list which contains the objects produced by the Setup() constructor and the Setup method mk_entities().<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_sim</span></td><td class="fieldArgDesc">number of times to run simulation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_usreqs</span></td><td class="fieldArgDesc">quantity of user equipments on each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">loss_prob</span></td><td class="fieldArgDesc">probability that a transport block is lost.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gen_size</span></td><td class="fieldArgDesc">size in bits of data to include in packets to generate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gen_delay</span></td><td class="fieldArgDesc">delay between packet generation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_pkts</span></td><td class="fieldArgDesc">quantity of packets to generate on each round, same for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_maxlen</span></td><td class="fieldArgDesc">user equipment queue maximum length, same for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_keep</span></td><td class="fieldArgDesc">whether to keep packets after transmission, same for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_res</span></td><td class="fieldArgDesc">quantity of resources to generate, of qualities Poor, Fair, Good.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">assgn_mat</span></td><td class="fieldArgDesc">resource to slice assign matrix.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trans_delay</span></td><td class="fieldArgDesc">delay between transmissions.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dbg_setup</span></td><td class="fieldArgDesc">a list, debug for slice, user equipments, traffic generators.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dbg_run</span></td><td class="fieldArgDesc">debug options for simulation run.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_scene</span></td><td class="fieldArgDesc">a list [setup_obj, ls_setup, ls_slices, ls_trfgen, dc_objs] to use a Setup object with entities already created.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="PyWiSim.models.scheduler.rrscheduler.qa_massive.setup_sim">
+    
+  </a>
+  <a name="setup_sim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup_sim</span>(nr_usreqs=[<wbr></wbr>1, <wbr></wbr>1, <wbr></wbr>2], nr_res=[<wbr></wbr>5, <wbr></wbr>4, <wbr></wbr>4], rs_assgn_mat=[]):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Creates an example of a simulation scenery with default values.</p>
+<p>Entities are created with their default parameter values, but may be changed later, using the method change_attrs() of the Setup class.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_usreqs</span></td><td class="fieldArgDesc">a list, numbers of user equipments to create for each slice.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_res</span></td><td class="fieldArgDesc">a list, numbers of resources to create of types Poor, Fair, Good.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rs_assgn_mat</span></td><td class="fieldArgDesc">resource assignment matrix.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a setup object and a setup list.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="PyWiSim.models.scheduler.rrscheduler.qa_massive.test_mass_run">
+    
+  </a>
+  <a name="test_mass_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_mass_run</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Setup and run a long simulation with many users, run.</p>
+<p>This test creates the Setup object and makes its entitities to change attributes not included in the parameters list of the run_sim() function.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="PyWiSim.models.scheduler.rrscheduler.qa_massive.test_mass_vrfy">
+    
+  </a>
+  <a name="test_mass_vrfy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_mass_vrfy</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Setup and run a long simulation with many users, verify.</p>
+<p>This test creates the Setup object and makes its entitities to change attributes not included in the parameters list of the run_sim() function.</p>
+</div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.models.scheduler.rrscheduler.qa_massive.ls_tests">
+    
+  </a>
+  <a name="ls_tests">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_tests</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>List of tests to show in menu.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.models.scheduler.rrscheduler.qa_massive.op">
+    
+  </a>
+  <a name="op">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">op</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

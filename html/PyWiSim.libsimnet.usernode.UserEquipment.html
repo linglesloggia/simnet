@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.libsimnet.usernode.UserEquipment</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.libsimnet.html">libsimnet</a></code><wbr></wbr>.<code><a href="PyWiSim.libsimnet.usernode.html">usernode</a></code><wbr></wbr>.<code><a href="PyWiSim.libsimnet.usernode.UserEquipment.html">UserEquipment</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">UserEquipment</span>:</code></p>
+        <p><a href="classIndex.html#PyWiSim.libsimnet.usernode.UserEquipment">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Represents a user data terminal equipment (DTE) and its traffic.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id32">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td>For pretty printing.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#gen_traffic">gen_traffic</a></code></td>
+    <td>Adds bits to send as a "packet" into the packet queue.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_pos_vel">get_pos_vel</a></code></td>
+    <td>Returns vector of position and velocity.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mk_ls_trblk">mk_ls_trblk</a></code></td>
+    <td>With resources available, inserts packets into transport blocks.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pos_move">pos_move</a></code></td>
+    <td>Changes vector position according to a velocity vector.</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#counter">counter</a></code></td>
+    <td>Object creation counter, for unique object identifier.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#chan">chan</a></code></td>
+    <td>Channel assigned to this user equipment.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#chan_state">chan_state</a></code></td>
+    <td>Channel state in a certain instant.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#debug">debug</a></code></td>
+    <td>If True prints debug messages, more detailed if value is 3.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#id_object">id_object</a></code></td>
+    <td>A unique object identifier.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#last_move_t">last_move_t</a></code></td>
+    <td>Time of last move action.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#make_tb">make_tb</a></code></td>
+    <td>Transport block modes according to resources.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pktque_dl">pktque_dl</a></code></td>
+    <td>Packet queue to handle this user equiment download traffict.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pktque_ul">pktque_ul</a></code></td>
+    <td>Packet queue to handle this user equipment upload traffic.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tr_blk">tr_blk</a></code></td>
+    <td>Transport block object, determines number of bits to transmit.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#trf_gen">trf_gen</a></code></td>
+    <td>Traffic generator object, adds packets to user equipment queue.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#usr_grp">usr_grp</a></code></td>
+    <td>User group to which this user equipment belongs.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#v_pos">v_pos</a></code></td>
+    <td>User equipment position vector, convert to numpy array type.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#v_vel">v_vel</a></code></td>
+    <td>User equipment velocity vector, convert to numpy array type.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, usr_grp, v_pos=[<wbr></wbr>0.0, <wbr></wbr>0.0, <wbr></wbr>0.0], v_vel=[<wbr></wbr>0.0, <wbr></wbr>0.0, <wbr></wbr>0.0], make_tb=<span class="rst-variable-quote">'</span><span class="rst-variable-string">OneTBallRes</span><span class="rst-variable-quote">'</span>, debug=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">usr_grp</span></td><td class="fieldArgDesc">pointer to the UserGroup object to which this UserEquipment belongs.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">v_pos</span></td><td class="fieldArgDesc">three dimensional vector of position, a list.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">v_vel</span></td><td class="fieldArgDesc">three dimensional vector of velocity, a list.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">make_tb</span></td><td class="fieldArgDesc">"OneTBallRes" makes one TB with all resources, "OneTBbyRes" makes one TB for each resource, "TBbyNrRes" makes one TB with a number of resources of the same type.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if True print messages, if "3" prints more detailed messages.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>For pretty printing.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.gen_traffic">
+    
+  </a>
+  <a name="gen_traffic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gen_traffic</span>(self, nr_bits, time_t, ul_dl=<span class="rst-variable-quote">'</span><span class="rst-variable-string">DL</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Adds bits to send as a "packet" into the packet queue.</p>
+<p>Though traffic is usually received from a traffic generator, this function allows to insert data packets manually, mainly for testing purposes.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_bits</span></td><td class="fieldArgDesc">number of bits in packet.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation instant time, for a timestamp.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ul_dl</span></td><td class="fieldArgDesc">traffic to generate, download (DL) or upload (UL).</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.get_pos_vel">
+    
+  </a>
+  <a name="get_pos_vel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_pos_vel</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns vector of position and velocity.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">position vector, velocity vector.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.mk_ls_trblk">
+    
+  </a>
+  <a name="mk_ls_trblk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mk_ls_trblk</span>(self, ls_res, time_t, ul_dl=<span class="rst-variable-quote">'</span><span class="rst-variable-string">DL</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>With resources available, inserts packets into transport blocks.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_res</span></td><td class="fieldArgDesc">list of resources assigned to this user equipment at a certain time.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation instant time, for a timestamp.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ul_dl</span></td><td class="fieldArgDesc">make transport block and transmit from upload (UL) or download (DL) queue.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of transport blocks for this user equipment, and the total bits included in all transport blocks.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.pos_move">
+    
+  </a>
+  <a name="pos_move">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pos_move</span>(self, time_t, v_vel=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Changes vector position according to a velocity vector.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">instant time.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">v_vel</span></td><td class="fieldArgDesc">velocity vector in m/s, or None to use self velocity attribute. If this parameter is not None, self velocity vector is updated to this value.</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.counter">
+    
+  </a>
+  <a name="counter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">counter</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Object creation counter, for unique object identifier.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.chan">
+    
+  </a>
+  <a name="chan">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">chan</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Channel assigned to this user equipment.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.chan_state">
+    
+  </a>
+  <a name="chan_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">chan_state</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Channel state in a certain instant.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.debug">
+    
+  </a>
+  <a name="debug">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">debug</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>If True prints debug messages, more detailed if value is 3.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.id_object">
+    
+  </a>
+  <a name="id_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_object</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>A unique object identifier.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.last_move_t">
+    
+  </a>
+  <a name="last_move_t">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">last_move_t</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Time of last move action.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.make_tb">
+    
+  </a>
+  <a name="make_tb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">make_tb</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Transport block modes according to resources.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.pktque_dl">
+    
+  </a>
+  <a name="pktque_dl">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pktque_dl</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Packet queue to handle this user equiment download traffict.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.pktque_ul">
+    
+  </a>
+  <a name="pktque_ul">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pktque_ul</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Packet queue to handle this user equipment upload traffic.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.tr_blk">
+    
+  </a>
+  <a name="tr_blk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tr_blk</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Transport block object, determines number of bits to transmit.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.trf_gen">
+    
+  </a>
+  <a name="trf_gen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">trf_gen</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Traffic generator object, adds packets to user equipment queue.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.usr_grp">
+    
+  </a>
+  <a name="usr_grp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">usr_grp</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>User group to which this user equipment belongs.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.v_pos">
+    
+  </a>
+  <a name="v_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">v_pos</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>User equipment position vector, convert to numpy array type.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.usernode.UserEquipment.v_vel">
+    
+  </a>
+  <a name="v_vel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">v_vel</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>User equipment velocity vector, convert to numpy array type.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

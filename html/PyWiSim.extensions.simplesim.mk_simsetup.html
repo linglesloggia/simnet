@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.extensions.simplesim.mk_simsetup</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.extensions.html">extensions</a></code><wbr></wbr>.<code><a href="PyWiSim.extensions.simplesim.html">simplesim</a></code><wbr></wbr>.<code><a href="PyWiSim.extensions.simplesim.mk_simsetup.html">mk_simsetup</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>PyWiSim template to setup a simulation scenery.</p>
+<p>Creates the lists of objects necessary to run the simulation; these lists are passed as parameters to a Simulation object, which runs the simulation.</p>
+<p>This example template creates only one object of each class; it is just an example of object creation, their required parameters, and how to attach each new object to previuosly created objects to define a complete simulation structure.</p>
+<p>This code is not optimized for execution, but for showing how to manually build a simulation scenery. To this end, some redundancy may be detected, e.g. by getting pointers to objects which in this context are already available, but may be necessary in the general case.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id5">
+  
+  
+  <tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#assgn_mat">assgn_mat</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#attach_to">attach_to</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#bs">bs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#dbg_run">dbg_run</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#dc_objs">dc_objs</a></code></td>
+    <td>Container entities by identificator.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#debug">debug</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#end_time">end_time</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#gen_delay">gen_delay</a></code></td>
+    <td>Delay between packet generation.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#gen_size">gen_size</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#id_base">id_base</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#id_pref">id_pref</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#id_slc">id_slc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#id_usr_grp">id_usr_grp</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#keep_pkts">keep_pkts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#loss_prob">loss_prob</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ls_slices">ls_slices</a></code></td>
+    <td>List of Slices.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ls_trfgen">ls_trfgen</a></code></td>
+    <td>List of traffic generators.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#max_len">max_len</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nr_items">nr_items</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nr_pkts">nr_pkts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nr_sbands">nr_sbands</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nr_slots">nr_slots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pkt_prefix">pkt_prefix</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#priority">priority</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#profile">profile</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pt_bs">pt_bs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pt_ch_env">pt_ch_env</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pt_inter_sl_sched">pt_inter_sl_sched</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pt_sched_dl">pt_sched_dl</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pt_slc">pt_slc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pt_tg_obj">pt_tg_obj</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pt_ugr">pt_ugr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#qu_prefix">qu_prefix</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#res_type">res_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#run_sim">run_sim</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#sim_obj">sim_obj</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#start_time">start_time</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#stat_obj">stat_obj</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#syms_slot">syms_slot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#time_sim">time_sim</a></code></td>
+    <td>Number of times to run simulation (number of simulation intervals).</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#trans_delay">trans_delay</a></code></td>
+    <td>Delay between transmisions.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#usreq">usreq</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#v_pos">v_pos</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#v_vel">v_vel</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.assgn_mat">
+    
+  </a>
+  <a name="assgn_mat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">assgn_mat</span>: <code>list[<wbr></wbr>list]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.attach_to">
+    
+  </a>
+  <a name="attach_to">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">attach_to</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.bs">
+    
+  </a>
+  <a name="bs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bs</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.dbg_run">
+    
+  </a>
+  <a name="dbg_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dbg_run</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.dc_objs">
+    
+  </a>
+  <a name="dc_objs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dc_objs</span>: <code>dict</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Container entities by identificator.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.debug">
+    
+  </a>
+  <a name="debug">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">debug</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.end_time">
+    
+  </a>
+  <a name="end_time">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">end_time</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.gen_delay">
+    
+  </a>
+  <a name="gen_delay">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gen_delay</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Delay between packet generation.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.gen_size">
+    
+  </a>
+  <a name="gen_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gen_size</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.id_base">
+    
+  </a>
+  <a name="id_base">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_base</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.id_pref">
+    
+  </a>
+  <a name="id_pref">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_pref</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.id_slc">
+    
+  </a>
+  <a name="id_slc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_slc</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.id_usr_grp">
+    
+  </a>
+  <a name="id_usr_grp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_usr_grp</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.keep_pkts">
+    
+  </a>
+  <a name="keep_pkts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">keep_pkts</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.loss_prob">
+    
+  </a>
+  <a name="loss_prob">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">loss_prob</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.ls_slices">
+    
+  </a>
+  <a name="ls_slices">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_slices</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>List of Slices.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.ls_trfgen">
+    
+  </a>
+  <a name="ls_trfgen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_trfgen</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>List of traffic generators.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.max_len">
+    
+  </a>
+  <a name="max_len">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">max_len</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.nr_items">
+    
+  </a>
+  <a name="nr_items">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_items</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.nr_pkts">
+    
+  </a>
+  <a name="nr_pkts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_pkts</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.nr_sbands">
+    
+  </a>
+  <a name="nr_sbands">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_sbands</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.nr_slots">
+    
+  </a>
+  <a name="nr_slots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_slots</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pkt_prefix">
+    
+  </a>
+  <a name="pkt_prefix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pkt_prefix</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.priority">
+    
+  </a>
+  <a name="priority">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">priority</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.profile">
+    
+  </a>
+  <a name="profile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">profile</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pt_bs">
+    
+  </a>
+  <a name="pt_bs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_bs</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pt_ch_env">
+    
+  </a>
+  <a name="pt_ch_env">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_ch_env</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pt_inter_sl_sched">
+    
+  </a>
+  <a name="pt_inter_sl_sched">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_inter_sl_sched</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pt_sched_dl">
+    
+  </a>
+  <a name="pt_sched_dl">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_sched_dl</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pt_slc">
+    
+  </a>
+  <a name="pt_slc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_slc</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pt_tg_obj">
+    
+  </a>
+  <a name="pt_tg_obj">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_tg_obj</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.pt_ugr">
+    
+  </a>
+  <a name="pt_ugr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_ugr</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.qu_prefix">
+    
+  </a>
+  <a name="qu_prefix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">qu_prefix</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.res_type">
+    
+  </a>
+  <a name="res_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">res_type</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.run_sim">
+    
+  </a>
+  <a name="run_sim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">run_sim</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.sim_obj">
+    
+  </a>
+  <a name="sim_obj">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sim_obj</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.start_time">
+    
+  </a>
+  <a name="start_time">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">start_time</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.stat_obj">
+    
+  </a>
+  <a name="stat_obj">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">stat_obj</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.syms_slot">
+    
+  </a>
+  <a name="syms_slot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">syms_slot</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.time_sim">
+    
+  </a>
+  <a name="time_sim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">time_sim</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Number of times to run simulation (number of simulation intervals).</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.trans_delay">
+    
+  </a>
+  <a name="trans_delay">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">trans_delay</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Delay between transmisions.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.usreq">
+    
+  </a>
+  <a name="usreq">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">usreq</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.v_pos">
+    
+  </a>
+  <a name="v_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">v_pos</span>: <code>list[<wbr></wbr>int]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.mk_simsetup.v_vel">
+    
+  </a>
+  <a name="v_vel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">v_vel</span>: <code>list[<wbr></wbr>int]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

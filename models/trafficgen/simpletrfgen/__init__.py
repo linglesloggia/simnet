@@ -1,0 +1,3 @@
+'''Traffic generator simple model.
+'''
+

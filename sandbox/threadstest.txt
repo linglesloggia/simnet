@@ -1,0 +1,31 @@
+threadtest.py : results
+
+$ python3 threadstest.py 20 0.001 20 0
+Simulation run with threads and list
+    nr_objects=20, sim_step=0.001, nr_rounds=20
+    Objects in thread, simulation time:    0.010 secs
+    Objects in list, simulation time:      0.008 secs
+
+$ python3 threadstest.py 20 0.001 20 0
+Simulation run with threads and list
+    nr_objects=20, sim_step=0.001, nr_rounds=20
+    Objects in thread, simulation time:    0.011 secs
+    Objects in list, simulation time:      0.008 secs
+
+$ python3 threadstest.py 200 0.001 200 0
+Simulation run with threads and list
+    nr_objects=200, sim_step=0.001, nr_rounds=200
+    Objects in thread, simulation time:    0.761 secs
+    Objects in list, simulation time:      0.411 secs
+
+$ python3 threadstest.py 1000 0.001 1000 0
+Simulation run with threads and list
+    nr_objects=1000, sim_step=0.001, nr_rounds=1000
+    Objects in thread, simulation time:   17.026 secs
+    Objects in list, simulation time:     10.288 secs
+
+$ python3 threadstest.py 2000 0.001 2000 0
+Simulation run with threads and list
+    nr_objects=2000, sim_step=0.001, nr_rounds=2000
+    Objects in thread, simulation time:   67.115 secs
+    Objects in list, simulation time:     29.314 secs

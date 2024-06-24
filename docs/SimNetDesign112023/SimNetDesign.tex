@@ -1,0 +1,317 @@
+%\documentclass[spanish, compress]{beamer}
+% from lankton-theme demo tex file
+\documentclass[spanish]{beamer}    % [serif, mathserif] obsolete, suppressed
+
+\usepackage{amsmath, amsfonts, epsfig, xspace}
+%\usepackage{algorithm,algorithmic}
+\usepackage{pstricks,pst-node}
+\usepackage{multimedia}
+\usepackage[normal,tight,center]{subfigure}
+\setlength{\subfigcapskip}{-.5em}
+\usepackage{beamerthemesplit}
+
+%\usetheme{lankton-keynote-vgb}
+\useoutertheme{default}
+\usecolortheme{seagull}
+
+% spanish, accents
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
+
+\author[Pablo Belzarena, Víctor González Barbone]{Pablo Belzarena, Víctor González Barbone}
+
+\title[SimNet: diseño\hspace{2em}\insertframenumber/\inserttotalframenumber]{SimNet: diseño}
+
+\subtitle{A discrete event, system level\\ wireless network simulator and software framework}   %\vspace{0.1cm} 
+
+\date{Diciembre 2023}     %leave out for today's date to be insterted
+
+\institute[IIE]{Instituto de Ingeniería Eléctrica\\
+   Facultad de Ingeniería\\
+   Universidad de la República Uruguay  %\\
+   %\vspace{0.2cm}
+   %\includegraphics[height=1.0cm]{IIE\_FIng\_UR.jpeg}
+   %\vfill
+   }
+
+\logo{\includegraphics[height=0.6cm]{iie_logo_1500.png}}
+
+\begin{document}
+
+% --------------------------------------------------Slide --
+
+%\maketitle
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Contenido}
+    SimNet, presentación del diseño y estado de avance.
+    \begin{itemize}
+        \item Antecedentes y objetivos.
+        \item Arquitectura.
+        \item Escenario de simulación.
+        \item Simulación por eventos.
+        \item Cola de paquetes y manejo de transmisión.
+        \item Integración con PyWiCh.
+        \item Próximos objetivos.
+    \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Antecedentes y objetivos}
+    Antecedentes:
+    \begin{itemize}
+        \item varios proyectos anteriores (tesis, fin de carrera).
+        \item realizaciones de prototipo.
+        \item difíciles de extender a diferentes modelos.
+    \end{itemize}
+    Objetivos:
+    \begin{itemize}
+        \item buen diseño de arquitectura, modularización, bajo acoplamiento, alta cohesión; un "software framework".
+        \item eficiencia: estructuras de datos y su manejo.
+        \item integrar desarrollos de proyectos anteriores.
+        \item integrar e interactuar (datos de archivo) con simulador de canal PyWich: ejemplo y prueba de concepto de extensión.
+        \item orientado a la extensión: funcionalidad, protocolos, algoritmos.
+        \item mantener la evolución del software con estos objetivos.
+    \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Diagrama de paquetes}
+    \begin{columns}
+    \begin{column}{0.50\textwidth}
+        Biblioteca libsimnet:
+        \begin{itemize}
+            \item núcleo del sistema.
+            \item se pueden sobreescribir.
+            \item solo desarrolladores SimNet.
+        \end{itemize}
+        Extensiones:
+        \begin{itemize}
+            \item para distintos modelos de simulación.
+            \item agregan clases, sobreescriben las del núcleo.
+            \item en SimNet, dentro del paquete \texttt{extensions}, o
+            \item fuera de SimNet, ``out of tree''.
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+        \pgfimage[width=0.99\textwidth]{../diagrams/UMLpackages.png}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}[plain]
+    \frametitle{Diagrama de clases}
+    \center \pgfimage[width=0.95\textwidth]{../diagrams/UML-libsimnet_clases.png}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}[plain]
+    \frametitle{Diagrama de objetos}
+    \center \pgfimage[width=0.95\textwidth]{../diagrams/UML-libsimnet_objects.png}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Estructura de directorios}
+    SimNet, directorio del proyecto. Contiene:
+        \begin{itemize}
+            \item \texttt{libsimnet} : el núcleo, modifican solo desarrolladores.
+            \item \texttt{extensions/xxxx\_sim} : clases agregadas y sobreescritas de \texttt{libsimnet} para simulador\ Xxxx. Incluye setup de escenario y código de prueba.
+            \item sandbox : códigos de prueba de algoritmos y estructuras.
+            \item docs : documentación formato MD (markdown language), usados en Gitlab, Github, etc.
+            \item html : documentación del código, con pydoctor. 
+        \end{itemize}
+    Un nuevo modelo de simulación puede implementarse:
+        \begin{itemize}
+            \item fuera de la estructura de directorios de SimNet, o
+            \item dentro del directorio \texttt{extensions}.
+        \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Escenario de simulación}
+        %\begin{itemize}
+        %    \item Concentra en un módulo la definición del escenario de simulación, para poder probar fácilmente distintos escenarios
+        Concentra en un módulo la definición del escenario de simulación, para poder probar fácilmente distintos escenarios.\\
+        %\vspace{0.2cm}
+        Clase \texttt{simsetup.Setup}, crea escenario en base a lista de items:\\
+            \vspace{0.2cm}
+            \texttt{[ class\_name, nr\_items, attach\_to, ls\_pars, ... ]} 
+            \vspace{0.2cm}
+            \begin{itemize}
+                \item define objetos, cantidad y a qué entidad se enganchan.
+                \item permite fijar parámetros para las distintas entidades.
+                \item devuelve dos listas: \texttt{ls\_slices} (slices), y \texttt{ls\_trfgen} (generadores de tráfico).
+            \end{itemize}
+        En el módulo de usuario \texttt{qa\_simulator}, las funciones:
+            \begin{itemize}
+                \item \texttt{setup\_sim}: fija parámetros, crea objeto Setup.
+                \item \texttt{run\_sim}: recibe objeto Setup, crea objetos Simulation y Statistics, corre la simulación. 
+            \end{itemize}
+%        \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Simulación por eventos}
+    Modos de simulación: alternativas, ventajas e inconvenientes: 
+        \begin{itemize}
+            \item simuladores genéricos, e.g. simpy, muchas funcionalidades.
+            \item threads: muchos, overhead, coordinación entre sí.
+            \item procesamiento secuencial con unidades de tiempo.
+            \item eventos, en una cola de prioridad.
+        \end{itemize}
+    Clase de Python \texttt{queue.PriorityQueue}:
+        \begin{itemize}
+            \item inserción: \texttt{put(evento)}, ubica en lista ordenada.
+            \item extracción: \texttt{get()} devuelve el evento más próximo.
+            \item inserción en O(log(n)), extracción en O(1).
+            \item el evento debe ser ordenable; en SimNet, una lista\\
+            \texttt{[ time\_t, priority, id\_action]}
+        \end{itemize}
+    Eventos en SimNet:
+        \begin{itemize}
+            \item cada proceso periódico agenda su próximo evento.
+            \item procesos: generar tráfico, transmitir, repartir recursos.
+        \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Eventos en SimNet}
+    Tipos de evento, lista: \texttt{[id\_action, delay, priority]}
+    \begin{itemize}
+        \item \texttt{id\_action}: nombre de una función, ordenable, se busca en un diccionario \texttt{ \{id\_action : function\} }
+        \item \texttt{delay}: siguiente evento en \texttt{time\_t + delay}.
+        \item \texttt{priority}: para eventos que ocurren en un mismo momento.
+        \item eventos: GenTraffic, GenerateTBs, TransmitTBs, AssignRes, ShowProgress, EndSimulation.
+        \item delay en EndSimulation es la duración de la simulación.
+    \end{itemize}
+    Secuencia de simulación:
+    \begin{itemize}
+        \item al inicio, genera un evento de cada tipo.
+        \item extrae un evento, sale siempre el más cercano.
+        \item ejecuta la función correspondiente al evento extraído.
+        \item la función devuelve un nuevo evento, cuyo delay puede variar.
+        \item inserta el nuevo evento en la cola de prioridades.
+    \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{PacketQueue, lista de paquetes}
+    Formato de registro de un paquete:\\
+        \texttt{[ id\_pkt, time\_rec, time\_sent, object | nr\_bits ]}
+    \begin{itemize}
+        \item los datos pueden ser un objeto, un string o un número de bits.
+        \item una vez transmitidos, pueden conservarse o descartarse.
+        \item la lista puede tener longitud máxima, al superarla se descartan los paquetes.
+        \item transmisión por paquetes o por transport blocks.
+        \item un transport block incluye uno o más paquetes, según recursos, canal, etc., al momento de transmitir.
+        \item un transport block puede transmitirse con éxito o perderse.
+        \item los paquetes perdidos se retienen y retransmiten con la mayor prioridad.
+        \item contadores registran recibidos, enviados, retransmitidos, descartados, en número de paquetes y en bits.
+    \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}[plain]
+    \frametitle{PacketQueue, proceso de transmisión (I)}
+    \center \pgfimage[width=0.97\textwidth]{../diagrams/pktqueue-transmit.png}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{PacketQueue, proceso de transmisión (II)}
+\texttt{mk\_trblk(tb\_size)} devuelve un transport block (TB):
+% \texttt{pkt\_qu.mk\_trblk(tb\_size)}; paquetes:
+\begin{itemize}
+    \item extrae del diccionario de retransmisión\\ \texttt{dc\_retrans = \{id\_packet : packet\};}
+    \item extrae de la cola de paquetes recibidos;
+    \item crea TB = \texttt{[tr\_blk\_id, pkt\_1, pkt\_2, ...] }
+    \item agrega a diccionario de TBs pendientes (en aire):\\ \texttt{dc\_pend[tr\_blk\_id] = [pkt\_1, pkt\_2, ...] }
+\end{itemize}
+\vspace{0.2cm}
+%Procesa envío, recibe identificador de TB y \texttt{"Lost"} o \texttt{"Sent"}:
+\texttt{send\_tb(tr\_blk\_id, "Sent"|"Lost", t\_stamp)} procesa envío:
+\begin{itemize}
+    \item para cada paquete en \texttt{dc\_pend[tr\_blk\_id]} :
+    \begin{itemize}
+        \item IF "Sent":
+        \begin{itemize}
+            \item agrega timestamp al paquete; ajusta contadores. 
+            \item opcionalmente lo mueve a la cola de paquetes enviados.
+            \item si el paquete está en \texttt{dc\_retrans}, lo extrae.
+        \end{itemize}
+        \item IF "Lost":
+            \begin{itemize}
+                \item IF el paquete no está en \texttt{dc\_retrans}, lo agrega.
+            \end{itemize}
+    \end{itemize}
+    \item extrae el TB de pendientes: \texttt{del dc\_pend[tr\_blk\_id] }
+\end{itemize}
+
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}[plain]
+    \frametitle{PyWiCh, integración en SimNet}
+    \center \pgfimage[width=0.95\textwidth]{../diagrams/UML-pywich_sim.png}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Próximos objetivos}
+    Objetivos inmediatos:
+    \begin{itemize}
+        \item en libsimnet, identificar clases y métodos a sobreescribir.
+        \item crear un ejemplo simple como guía para la extensión de libsimnet.
+        \item documentación, páginas de descripción, instalación, extensión.
+        \item pruebas de rendimiento en distintos escenarios.
+    \end{itemize}
+    \vspace{0.5cm}
+    Objetivos de próximo desarrollo:
+    \begin{itemize}
+        \item estudiar e integrar protocolos y algoritmos implementados en proyectos anteriores.
+        \item adaptar interfaces de libsimnet para facilitar la extensión e integración de otras implementaciones de protocolos y algoritmos (mejora continua).
+    \end{itemize}
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\begin{frame}
+    \frametitle{Final}
+    \center \pgfimage[width=0.85\textwidth]{PdD-Piria.png}
+    \vspace{0.5cm}
+    \center Muchas gracias
+    %\vspace{0.3cm}
+    \center IIE en el Este
+\end{frame}
+
+% --------------------------------------------------Slide --
+
+\end{document}

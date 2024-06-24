@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.models.html">models</a></code><wbr></wbr>.<code><a href="PyWiSim.models.trafficgen.html">trafficgen</a></code><wbr></wbr>.<code><a href="PyWiSim.models.trafficgen.simpletrfgen.html">simpletrfgen</a></code><wbr></wbr>.<code><a href="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.html">simple_trfgen</a></code><wbr></wbr>.<code><a href="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.html">TrafficGenerator</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">TrafficGenerator</span>(<span title="libsimnet.usernode.TrafficGenerator">TrafficGenerator</span>):</code></p>
+        <p><a href="classIndex.html#PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Generates traffic on each user of a list of usreqs.</p>
+<p>A simple traffic generator with fixed packet size, fixed delay between packet generation, and a fixed number of packets on each instance of execution.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id82">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td>For pretty printing.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_gen_delay">get_gen_delay</a></code></td>
+    <td>Determine delay for next traffic generator event.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_gen_size">get_gen_size</a></code></td>
+    <td>Determines size of packets to generate.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_nr_pkts">get_nr_pkts</a></code></td>
+    <td>Determine number of packets to generate.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run">run</a></code></td>
+    <td>Generates traffic, returns new event.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#gen_delay">gen_delay</a></code></td>
+    <td>Number of simulation intervlas between generation.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#gen_size">gen_size</a></code></td>
+    <td>Size in bits of data to include in packets to generate.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#nr_pkts">nr_pkts</a></code></td>
+    <td>Number of packets to generate on each instant time.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, pktque, gen_size=10, gen_delay=1, nr_pkts=1, priority=1, ul_dl=<span class="rst-variable-quote">'</span><span class="rst-variable-string">DL</span><span class="rst-variable-quote">'</span>, debug=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pktque</span></td><td class="fieldArgDesc">packet queue in which to insert generated packets.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gen_size</span></td><td class="fieldArgDesc">size in bits of data to include in packets to generate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gen_delay</span></td><td class="fieldArgDesc">number of simulation time units between generation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_pkts</span></td><td class="fieldArgDesc">number of packets to generate on each instant time.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">priority</span></td><td class="fieldArgDesc">order of execution.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ul_dl</span></td><td class="fieldArgDesc">traffic to generate, download (DL) or upload (UL).</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if True prints messages.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>For pretty printing.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.get_gen_delay">
+    
+  </a>
+  <a name="get_gen_delay">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_gen_delay</span>(self, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Determine delay for next traffic generator event.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">delay for next traffic generator event.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.get_gen_size">
+    
+  </a>
+  <a name="get_gen_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_gen_size</span>(self, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Determines size of packets to generate.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">size of packets to generate.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.get_nr_pkts">
+    
+  </a>
+  <a name="get_nr_pkts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_nr_pkts</span>(self, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Determine number of packets to generate.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">number of packets to generate.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Generates traffic, returns new event.</p>
+<p>Traffic are data packets represented as a number of bits.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation instant time.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">next traffic generator event.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.gen_delay">
+    
+  </a>
+  <a name="gen_delay">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gen_delay</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Number of simulation intervlas between generation.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.gen_size">
+    
+  </a>
+  <a name="gen_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">gen_size</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Size in bits of data to include in packets to generate.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.trafficgen.simpletrfgen.simple_trfgen.TrafficGenerator.nr_pkts">
+    
+  </a>
+  <a name="nr_pkts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_pkts</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Number of packets to generate on each instant time.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.sandbox.prioqueue</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.sandbox.html">sandbox</a></code><wbr></wbr>.<code><a href="PyWiSim.sandbox.prioqueue.html">prioqueue</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Tests a discrete event simulator engine based on a priority queue.</p>
+<p>Events are collected in a priority queue implemented as a Python data structure <tt class="rst-docutils literal">queue.PriorityQueue</tt>. This data structure ensures efficient addition of events, and guarantees extraction in the correct order of precedence, i.e. earlier events first. Each event in the priority queue is a list:</p>
+<pre class="rst-literal-block">
+    [ next_round, priority, id_action ]
+</pre>
+<p>where:</p>
+<ul class="rst-simple">
+<li>next_round : the next simulation round on which to execute the action indicated by this event.</li>
+<li>priority: the order of execution among other possible actions to be executed on the same round. This ensures an order of execution for events scheduled to be executed on the same instance (the same round).</li>
+<li>id_action: an identifier for the action to be executed.</li>
+</ul>
+<p>Actions are recorded in a dictionary of the form:</p>
+<pre class="rst-literal-block">
+    { id_action : action_function }
+</pre>
+<p>where:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">id_action</tt> : an identifier for the action to be executed.</li>
+<li><tt class="rst-docutils literal">action_function</tt> : the method in an action class which executes a task.</li>
+</ul>
+<p>Class <tt class="rst-docutils literal">Action</tt> retains information on the task to be executed, namely an action identifier, a delay which adds to the current round number to indicate the next round in which this action is to be executed again, and the priority of execution for tasks to be executed on the same round. Method <tt class="rst-docutils literal">run()</tt> in this class executes the task corresponding to this action.</p>
+<p>Class <tt class="rst-docutils literal">EventQueue</tt> contains and processes the event priority queue, i.e. runs the simulation. It recognizes events by consulting a dictionary <tt class="rst-docutils literal">{id_action : action_function}</tt> which returns the action method to execute according to the action identifier. Function <tt class="rst-docutils literal">run()</tt> carries on the simulation until the total number of rounds have been executed.</p>
+<p>The former organization allows to insert in this simulation engine any kind of task, provided it is coded in accordance to the <tt class="rst-docutils literal">Action</tt> class structure.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id97">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="PyWiSim.sandbox.prioqueue.Action.html">Action</a></code></td>
+    <td>An action to execute when an event calls for it.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="PyWiSim.sandbox.prioqueue.EventQueue.html">EventQueue</a></code></td>
+    <td>A queue of events in priority order of execution.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ac_trtbs">ac_trtbs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#dc_actions">dc_actions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#delay">delay</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ev_qu">ev_qu</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#id_action">id_action</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ls_tasks">ls_tasks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#priority">priority</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.prioqueue.ac_trtbs">
+    
+  </a>
+  <a name="ac_trtbs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ac_trtbs</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.prioqueue.dc_actions">
+    
+  </a>
+  <a name="dc_actions">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dc_actions</span>: <code>dict</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.prioqueue.delay">
+    
+  </a>
+  <a name="delay">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">delay</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.prioqueue.ev_qu">
+    
+  </a>
+  <a name="ev_qu">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ev_qu</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.prioqueue.id_action">
+    
+  </a>
+  <a name="id_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_action</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.prioqueue.ls_tasks">
+    
+  </a>
+  <a name="ls_tasks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_tasks</span>: <code>list[<wbr></wbr>list]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="PyWiSim.sandbox.prioqueue.priority">
+    
+  </a>
+  <a name="priority">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">priority</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

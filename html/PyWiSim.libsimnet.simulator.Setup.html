@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.libsimnet.simulator.Setup</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.libsimnet.html">libsimnet</a></code><wbr></wbr>.<code><a href="PyWiSim.libsimnet.simulator.html">simulator</a></code><wbr></wbr>.<code><a href="PyWiSim.libsimnet.simulator.Setup.html">Setup</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Setup</span>:</code></p>
+        <p><a href="classIndex.html#PyWiSim.libsimnet.simulator.Setup">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Sets up the simulation scenery.</p>
+<p>This is a help class to set up and configure a simulation scenery. This includes:</p>
+<ul class="rst-simple">
+<li>setup: creating all objects of the different classes and establishing the relationships among them;</li>
+<li>configuration: optionally and selectively updating the attribute values of the objects comprising the simulation scenery.</li>
+</ul>
+<p>The simulation scenery is setup by reading entries in a list of the following structure:</p>
+<pre class="rst-literal-block">
+    [setup_list] = [ [setup_item], ... ]
+    setup_item = [ class_name, nr_items, attach_to, id_object ]
+</pre>
+<p>Where:</p>
+<ul class="rst-simple">
+<li>class_name: the name of the class of the object to create.</li>
+<li>nr_items: the number of objects to create.</li>
+<li>attach_to: the object to which the new objects will be attached.</li>
+<li>id_object: a user defined name for a single object, required for BaseStation, Slice, UserGroup; besides these names, all entities have a unique object identifier automatically assigned based on a user given or default value prefix.</li>
+</ul>
+<p>In the following list, indentation indicates objects created together with the upper item. The setup of a scenery involves the following entities:</p>
+<ul class="rst-simple">
+<li>BaseStation.<ul>
+<li>InterSliceSched, assigns the base station's resources to slices.</li>
+<li>Slice, the slices in a base station, attached to a BaseStation.<ul>
+<li>Scheduler, to distribute resources among user groups, created together with and attached to a slice.</li>
+<li>UserGroup, attached to a slice.<ul>
+<li>UserEquipment, created together with and attached to a UserGroup.<ul>
+<li>Channel, the channel associated with each user.</li>
+<li>TransportBlock, the transport block associated with each user.</li>
+<li>PacketQueue, the data packet queue for a user equipment.</li>
+<li>TrafficGenerator, the traffic generator feeding the user equipment data queue; traffic generators are returned in a list.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Resource, the resources attached to a slice.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The former scheme allows for users of the same profile to be attached to a user group (all users in a user group have the same profile). Resources with different characteristics may be assigned to the same slice; for this reason they are not created simultaneously with the slice.</p>
+<p>The outcome of this class are two lists, which serve as parameters to the Simulation object:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">ls_slices : </tt> a list of Slice objects.</li>
+<li><tt class="rst-docutils literal">ls_trfgen : </tt> a list of TrafficGenerator objects.</li>
+</ul>
+<p>These two categories of object, Slice and TrafficGenerator, generate events into the priority queue which controls the simulation.</p>
+<p>Container entities BaseStation, Slice and UserGroup are recorded in a dictionary; this is needed to attach other entities to them, e.g. UserEquipment to UserGroup.</p>
+<p>Please note that the use of this class is not mandatory; the simulation scenery may be set up by hand to obtain the lists ls_slices and ls_trfgen which must be given as parameters to the simulation object function which runs the simulation.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id29">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#assgn_attrs">assgn_attrs</a></code></td>
+    <td>Assigns values to attributes of an object.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#change_attrs">change_attrs</a></code></td>
+    <td>Change value of attributes in objects of the simulation scenery.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mk_ent_group">mk_ent_group</a></code></td>
+    <td>Makes entities and sets relations for a specific class of object.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mk_entities">mk_entities</a></code></td>
+    <td>Makes entities and sets relations for all items in the setup list.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_dc_objs">show_dc_objs</a></code></td>
+    <td>Show container entities created.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_slices">show_slices</a></code></td>
+    <td>Show the list of all slices created in a base station.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show_trfgens">show_trfgens</a></code></td>
+    <td>Shows all traffic generators and the packet queues they feed.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#dc_objs">dc_objs</a></code></td>
+    <td>Container entities by identificator.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ls_setup">ls_setup</a></code></td>
+    <td>List of configuration items to set up the simulation scenery.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ls_slices">ls_slices</a></code></td>
+    <td>All slices.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ls_trfgen">ls_trfgen</a></code></td>
+    <td>All traffic generators.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pt_ch_env">pt_ch_env</a></code></td>
+    <td>One ChannelEnvironment object for all UserEquipment objects.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, ls_setup):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_setup</span></td><td class="fieldArgDesc">a list of configuration items to set up the simulation scenery.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.assgn_attrs">
+    
+  </a>
+  <a name="assgn_attrs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">assgn_attrs</span>(self, pt_obj, dc_pars, new_attrs=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Assigns values to attributes of an object.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pt_obj</span></td><td class="fieldArgDesc">a pointer to an object.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dc_pars</span></td><td class="fieldArgDesc">a dictionary of {attribute:value} to change the values of object attributes.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_attrs</span></td><td class="fieldArgDesc">adds new attributes.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.change_attrs">
+    
+  </a>
+  <a name="change_attrs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">change_attrs</span>(self, nm_class, id_object, dc_pars={}, new_attrs=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Change value of attributes in objects of the simulation scenery.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nm_class</span></td><td class="fieldArgDesc">name of a class.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">id_object</span></td><td class="fieldArgDesc">object identifier.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dc_pars</span></td><td class="fieldArgDesc">a dictionary of {attribute:value} to change the values of object attributes.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new_attrs</span></td><td class="fieldArgDesc">adds new attributes.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.mk_ent_group">
+    
+  </a>
+  <a name="mk_ent_group">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mk_ent_group</span>(self, setup_item, debug=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Makes entities and sets relations for a specific class of object.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">setup_item</span></td><td class="fieldArgDesc">an item in the setup list.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if True prints messages.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.mk_entities">
+    
+  </a>
+  <a name="mk_entities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mk_entities</span>(self, debug=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Makes entities and sets relations for all items in the setup list.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if True prints messages.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of slices, a list of traffic generators, a dictionary of some of the objects created.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.show_dc_objs">
+    
+  </a>
+  <a name="show_dc_objs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_dc_objs</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Show container entities created.</p>
+<p>Container entities like BaseStation, Slice, UserGroup, are recorded by object identificator in a dictionary.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.show_slices">
+    
+  </a>
+  <a name="show_slices">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_slices</span>(self, bs_stat, debug=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Show the list of all slices created in a base station.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bs_stat</span></td><td class="fieldArgDesc">the identificator of a BaseStation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if 3 prints detailed messages.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.show_trfgens">
+    
+  </a>
+  <a name="show_trfgens">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show_trfgens</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Shows all traffic generators and the packet queues they feed.</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.dc_objs">
+    
+  </a>
+  <a name="dc_objs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dc_objs</span>: <code>dict</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Container entities by identificator.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.ls_setup">
+    
+  </a>
+  <a name="ls_setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_setup</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>List of configuration items to set up the simulation scenery.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.ls_slices">
+    
+  </a>
+  <a name="ls_slices">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_slices</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>All slices.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.ls_trfgen">
+    
+  </a>
+  <a name="ls_trfgen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_trfgen</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>All traffic generators.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.libsimnet.simulator.Setup.pt_ch_env">
+    
+  </a>
+  <a name="pt_ch_env">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pt_ch_env</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>One ChannelEnvironment object for all UserEquipment objects.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

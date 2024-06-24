@@ -1,0 +1,3 @@
+'''MaxCQI scheduler model.
+'''
+

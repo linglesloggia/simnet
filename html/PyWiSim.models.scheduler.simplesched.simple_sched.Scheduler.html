@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.models.scheduler.simplesched.simple_sched.Scheduler</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.models.html">models</a></code><wbr></wbr>.<code><a href="PyWiSim.models.scheduler.html">scheduler</a></code><wbr></wbr>.<code><a href="PyWiSim.models.scheduler.simplesched.html">simplesched</a></code><wbr></wbr>.<code><a href="PyWiSim.models.scheduler.simplesched.simple_sched.html">simple_sched</a></code><wbr></wbr>.<code><a href="PyWiSim.models.scheduler.simplesched.simple_sched.Scheduler.html">Scheduler</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Scheduler</span>(<span title="libsimnet.basenode.Scheduler">Scheduler</span>):</code></p>
+        <p><a href="classIndex.html#PyWiSim.models.scheduler.simplesched.simple_sched.Scheduler">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>A simple resource scheduler, overwrites Scheduler in libsimnet.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id76">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td>For pretty printing, on overwritten class.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#assign_res">assign_res</a></code></td>
+    <td>Builds a list of user equipments and resources for each user.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ix_usreq_assgn">ix_usreq_assgn</a></code></td>
+    <td>Index of first user equipment to assign resources. Points to the next user equipment after the last one to receive resources, i.e. the first to be considered on next resources assignment.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.scheduler.simplesched.simple_sched.Scheduler.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.scheduler.simplesched.simple_sched.Scheduler.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>For pretty printing, on overwritten class.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.scheduler.simplesched.simple_sched.Scheduler.assign_res">
+    
+  </a>
+  <a name="assign_res">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">assign_res</span>(self, ls_usreqs, ls_res, time_t=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Builds a list of user equipments and resources for each user.</p>
+<p>Receives a list of user equipments and a list of resources, goes through the list of user equipments and assigns resources to each user equipment according to its user group profile, channel characteristics, and possibly other factors.</p>
+<p>In this simple example, one resource per user equipment is assigned in round robin until all resources have been assigned. If there are more user equipments than resources, some user equipments will not receive any resources; if there are more resources than user equipments, user equipments will receive more than one resource; user equipments in the firsts places in the list are privileged.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_usreqs</span></td><td class="fieldArgDesc">a list of UserEquipment objects.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_res</span></td><td class="fieldArgDesc">a list of Resource objects.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation instant time.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of [user equipment, resource, ... ] with as many resources as have been assigned to this user equipment, eventually none.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.scheduler.simplesched.simple_sched.Scheduler.ix_usreq_assgn">
+    
+  </a>
+  <a name="ix_usreq_assgn">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ix_usreq_assgn</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Index of first user equipment to assign resources. Points to the next user equipment after the last one to receive resources, i.e. the first to be considered on next resources assignment.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

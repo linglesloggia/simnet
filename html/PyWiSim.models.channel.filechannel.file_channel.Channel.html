@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.models.channel.filechannel.file_channel.Channel</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.models.html">models</a></code><wbr></wbr>.<code><a href="PyWiSim.models.channel.html">channel</a></code><wbr></wbr>.<code><a href="PyWiSim.models.channel.filechannel.html">filechannel</a></code><wbr></wbr>.<code><a href="PyWiSim.models.channel.filechannel.file_channel.html">file_channel</a></code><wbr></wbr>.<code><a href="PyWiSim.models.channel.filechannel.file_channel.Channel.html">Channel</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Channel</span>(<span title="libsimnet.usernode.Channel">Channel</span>):</code></p>
+        <p><a href="classIndex.html#PyWiSim.models.channel.filechannel.file_channel.Channel">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Channel model which reads channel states from a file.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id41">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td>For pretty printing.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_chan_state">get_chan_state</a></code></td>
+    <td>Return a measure of the channel state.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#interpolate">interpolate</a></code></td>
+    <td>Interpolates time and position values.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#mk_dc_chan_state">mk_dc_chan_state</a></code></td>
+    <td>Makes a dictionary of channel states by user equipment.</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#dc_chan_state">dc_chan_state</a></code></td>
+    <td>Dictionary of channel states for all user equipments.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#debug">debug</a></code></td>
+    <td>If True prints messages.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#f_name">f_name</a></code></td>
+    <td>File name of channel states for all user equipments.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#id_usreq">id_usreq</a></code></td>
+    <td>UserEquipment to which this Channel is attached.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#index">index</a></code></td>
+    <td>Index of last position in channel state list.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#interpol">interpol</a></code></td>
+    <td>If True, interpolates.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ls_state">ls_state</a></code></td>
+    <td>List of channel states by time.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ls_state_aux">ls_state_aux</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, ch_env=None, interpol=False, f_name=None, debug=False, loss_prob=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ch_env</span></td><td class="fieldArgDesc">pointer to a ChannelEnviroment object.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">interpol</span></td><td class="fieldArgDesc">if True, interpolates.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f_name</span></td><td class="fieldArgDesc">file name of channel states for all user equipments.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if True prints messages.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">loss_prob</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>For pretty printing.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.get_chan_state">
+    
+  </a>
+  <a name="get_chan_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_chan_state</span>(self, t, MS_pos, MS_vel):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return a measure of the channel state.</p>
+<p>Channel state is read from a file obtained from a channel simulator.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">t</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">MS_pos</span></td><td class="fieldArgDesc">position vector.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">MS_vel</span></td><td class="fieldArgDesc">velocity vector.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">channel state, a number.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.interpolate">
+    
+  </a>
+  <a name="interpolate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">interpolate</span>(self, t1, y1, t2, y2, t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Interpolates time and position values.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">t1</span></td><td class="fieldArgDesc">time 1.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1</span></td><td class="fieldArgDesc">position 1.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">t2</span></td><td class="fieldArgDesc">time 2.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2</span></td><td class="fieldArgDesc">position 2.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">t</span></td><td class="fieldArgDesc">simulation time.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">interpolated value.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.mk_dc_chan_state">
+    
+  </a>
+  <a name="mk_dc_chan_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mk_dc_chan_state</span>(self, f_name):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Makes a dictionary of channel states by user equipment.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f_name</span></td><td class="fieldArgDesc">file name of a CSV file with channel states.</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.dc_chan_state">
+    
+  </a>
+  <a name="dc_chan_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dc_chan_state</span>: <code>dict</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Dictionary of channel states for all user equipments.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.debug">
+    
+  </a>
+  <a name="debug">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">debug</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>If True prints messages.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.f_name">
+    
+  </a>
+  <a name="f_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">f_name</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>File name of channel states for all user equipments.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.id_usreq">
+    
+  </a>
+  <a name="id_usreq">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_usreq</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>UserEquipment to which this Channel is attached.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">index</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Index of last position in channel state list.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.interpol">
+    
+  </a>
+  <a name="interpol">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">interpol</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>If True, interpolates.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.ls_state">
+    
+  </a>
+  <a name="ls_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_state</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>List of channel states by time.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.models.channel.filechannel.file_channel.Channel.ls_state_aux">
+    
+  </a>
+  <a name="ls_state_aux">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_state_aux</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-05 14:35:44.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
