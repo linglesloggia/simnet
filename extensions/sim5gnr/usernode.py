@@ -73,7 +73,7 @@ class TransportBlock(TransportBlock):
             tbls = self.setTBS(R, Qm,ul_dl, fr_name, nr_res,self.mimo_mod,self.nlayers,nr_syms)  # bits
         else:
             tbls = 0  
-        return tbls
+        return int(tbls)
 
     def findMCS(self, s):
         mcs = -1
