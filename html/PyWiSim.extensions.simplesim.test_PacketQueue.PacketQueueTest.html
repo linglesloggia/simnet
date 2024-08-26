@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            PyWiSim, a wireless telecommunications simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="PyWiSim.html">PyWiSim</a></code><wbr></wbr>.<code><a href="PyWiSim.extensions.html">extensions</a></code><wbr></wbr>.<code><a href="PyWiSim.extensions.simplesim.html">simplesim</a></code><wbr></wbr>.<code><a href="PyWiSim.extensions.simplesim.test_PacketQueue.html">test_PacketQueue</a></code><wbr></wbr>.<code><a href="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.html">PacketQueueTest</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">PacketQueueTest</span>(<span title="unittest.TestCase">unittest.TestCase</span>):</code></p>
+        <p><a href="classIndex.html#PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p class="undocumented">Undocumented</p></div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id12">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setUp">setUp</a></code></td>
+    <td>Set up a minimum simulation scenery.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tearDown">tearDown</a></code></td>
+    <td>Cleanup scenery.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_last_k">test_last_k</a></code></td>
+    <td>Tests keep packets from last k time execution units.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_max_len">test_max_len</a></code></td>
+    <td>Tests maximum length of queue and drop packets.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_rec_send_tb">test_rec_send_tb</a></code></td>
+    <td>Tests reception of packets and size in bits of all received.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_send_pkt">test_send_pkt</a></code></td>
+    <td>Tests transmission of individual packets and traffic values.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#test_size_bits">test_size_bits</a></code></td>
+    <td>Tests length in bits function for different argument types.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pkq">pkq</a></code></td>
+    <td>PacketQueue object, its id incremented on each test.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pkt_count">pkt_count</a></code></td>
+    <td>Received packets counter.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#t_stamp">t_stamp</a></code></td>
+    <td>A timestamp of reception.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.setUp">
+    
+  </a>
+  <a name="setUp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setUp</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Set up a minimum simulation scenery.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.tearDown">
+    
+  </a>
+  <a name="tearDown">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">tearDown</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Cleanup scenery.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.test_last_k">
+    
+  </a>
+  <a name="test_last_k">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_last_k</span>(self, time_sim=13, last_k=6):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Tests keep packets from last k time execution units.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.test_max_len">
+    
+  </a>
+  <a name="test_max_len">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_max_len</span>(self, nr_gen=5, max_len=3):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Tests maximum length of queue and drop packets.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_gen</span></td><td class="fieldArgDesc">number of packets to generate.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max_len</span></td><td class="fieldArgDesc">maximum length of queue, if surpassed lose packets.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.test_rec_send_tb">
+    
+  </a>
+  <a name="test_rec_send_tb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_rec_send_tb</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Tests reception of packets and size in bits of all received.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.test_send_pkt">
+    
+  </a>
+  <a name="test_send_pkt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_send_pkt</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Tests transmission of individual packets and traffic values.</p>
+<p>Tests:</p>
+<ul class="rst-simple">
+<li>reception of packes as string or as int.</li>
+<li>transmission of packets one by one (no transport block).</li>
+<li>update of traffic counters sent, received and delay.</li>
+</ul>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.test_size_bits">
+    
+  </a>
+  <a name="test_size_bits">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_size_bits</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Tests length in bits function for different argument types.</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.pkq">
+    
+  </a>
+  <a name="pkq">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pkq</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>PacketQueue object, its id incremented on each test.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.pkt_count">
+    
+  </a>
+  <a name="pkt_count">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pkt_count</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Received packets counter.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="PyWiSim.extensions.simplesim.test_PacketQueue.PacketQueueTest.t_stamp">
+    
+  </a>
+  <a name="t_stamp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">t_stamp</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>A timestamp of reception.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for PyWiSim, a wireless telecommunications simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-06-13 17:44:19.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
