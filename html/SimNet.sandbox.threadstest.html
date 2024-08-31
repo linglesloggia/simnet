@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>SimNet.sandbox.threadstest</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            SimNet, a wireless network simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="SimNet.html">SimNet</a></code><wbr></wbr>.<code><a href="SimNet.sandbox.html">sandbox</a></code><wbr></wbr>.<code><a href="SimNet.sandbox.threadstest.html">threadstest</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>Test performance of execution in threads versus in list.</p>
+<p>Two classes of objects are defined, both implementing the same function, but one runs the function in its own thread (the class inherits from Thread), while the function in the other class will be called from outside. Two lists are built, one list with objects inheriting from Thread, the other with objects not inheriting from Thread. The first list runs a thread in each object, the other list runs only one thread and calls the function on each object in the list. Performance of the two implementations are compared in terms of processing time.</p>
+<p>TODO: sleep time supressed; probably not necessary for this test.</p>
+<p>Suggested tests:</p>
+<pre class="rst-literal-block">
+    $ python3 threadstest.py 20 0.001 20 0
+    $ python3 threadstest.py 20 0.001 20 0
+    $ python3 threadstest.py 200 0.001 200 0
+    $ python3 threadstest.py 1000 0.001 1000 0
+    $ python3 threadstest.py 2000 0.001 2000 0
+</pre>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id101">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="SimNet.sandbox.threadstest.EntityItem.html">EntityItem</a></code></td>
+    <td>A class for objects as items in a list run by a single thread.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="SimNet.sandbox.threadstest.EntityThread.html">EntityThread</a></code></td>
+    <td>A class with its own execution thread.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fn">fn</a></code></td>
+    <td>A function just to demand some processing.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fn_elist">fn_elist</a></code></td>
+    <td>A function to run the thread which calls the functions in objects.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fn_elist_run">fn_elist_run</a></code></td>
+    <td>A function to call the functions in objects from only one thread.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#fn_ethreads">fn_ethreads</a></code></td>
+    <td>A function to run the threads in each object.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#mutex_prt">mutex_prt</a></code></td>
+    <td>Mutually exclusive printing.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#debug">debug</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#lock_obj">lock_obj</a></code></td>
+    <td>To lock thread for mutually exclusive printing.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nr_objects">nr_objects</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#nr_rounds">nr_rounds</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#sim_step">sim_step</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="SimNet.sandbox.threadstest.fn">
+    
+  </a>
+  <a name="fn">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fn</span>(n=100):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>A function just to demand some processing.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.sandbox.threadstest.fn_elist">
+    
+  </a>
+  <a name="fn_elist">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fn_elist</span>(debug=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>A function to run the thread which calls the functions in objects.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.sandbox.threadstest.fn_elist_run">
+    
+  </a>
+  <a name="fn_elist_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fn_elist_run</span>(ls_objs, nr_rounds, debug):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>A function to call the functions in objects from only one thread.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.sandbox.threadstest.fn_ethreads">
+    
+  </a>
+  <a name="fn_ethreads">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">fn_ethreads</span>(debug=0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>A function to run the threads in each object.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.sandbox.threadstest.mutex_prt">
+    
+  </a>
+  <a name="mutex_prt">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mutex_prt</span>(msg):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Mutually exclusive printing.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">msg</span></td><td class="fieldArgDesc">string to print.</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.sandbox.threadstest.debug">
+    
+  </a>
+  <a name="debug">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">debug</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.sandbox.threadstest.lock_obj">
+    
+  </a>
+  <a name="lock_obj">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">lock_obj</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>To lock thread for mutually exclusive printing.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.sandbox.threadstest.nr_objects">
+    
+  </a>
+  <a name="nr_objects">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_objects</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.sandbox.threadstest.nr_rounds">
+    
+  </a>
+  <a name="nr_rounds">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_rounds</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.sandbox.threadstest.sim_step">
+    
+  </a>
+  <a name="sim_step">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sim_step</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for SimNet, a wireless network simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-03-04 18:34:21.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

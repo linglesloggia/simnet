@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>SimNet.libsimnet.usernode.UserEquipment</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            SimNet, a wireless network simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="SimNet.html">SimNet</a></code><wbr></wbr>.<code><a href="SimNet.libsimnet.html">libsimnet</a></code><wbr></wbr>.<code><a href="SimNet.libsimnet.usernode.html">usernode</a></code><wbr></wbr>.<code><a href="SimNet.libsimnet.usernode.UserEquipment.html">UserEquipment</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">UserEquipment</span>:</code></p>
+        <p><a href="classIndex.html#SimNet.libsimnet.usernode.UserEquipment">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>Represents a user data terminal equipment (DTE) and its traffic.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id33">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td>For pretty printing.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#gen_traffic">gen_traffic</a></code></td>
+    <td>Adds bits to send as a "packet" into the packet queue.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_pos_vel">get_pos_vel</a></code></td>
+    <td>Returns vector of position and velocity.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#transmit">transmit</a></code></td>
+    <td>With resources available, inserts packets into transport blocks.</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#counter">counter</a></code></td>
+    <td>Object creation counter, for unique object identifier.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#chan">chan</a></code></td>
+    <td>Channel assigned to this user equipment.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#chan_state">chan_state</a></code></td>
+    <td>Channel state in a certain instant.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#debug">debug</a></code></td>
+    <td>If True prints debug messages.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#id_object">id_object</a></code></td>
+    <td>A unique object identifier.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pkt_que">pkt_que</a></code></td>
+    <td>The PacketQueue object to handle traffic for this user equipment.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#tr_blk">tr_blk</a></code></td>
+    <td>Transport block object, determines number of bits to transmit.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#trf_gen">trf_gen</a></code></td>
+    <td>Traffic generator object, adds packets to user equipment queue.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#usr_grp">usr_grp</a></code></td>
+    <td>User group to which this user equipment belongs.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#v_pos">v_pos</a></code></td>
+    <td>User equipment position vector, numpy array type.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#v_vel">v_vel</a></code></td>
+    <td>User equipment velocity vector, numpy array type.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, usr_grp, v_pos=[<wbr></wbr>0, <wbr></wbr>0, <wbr></wbr>0], v_vel=[<wbr></wbr>0, <wbr></wbr>0, <wbr></wbr>0], debug=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">usr_grp</span></td><td class="fieldArgDesc">pointer to the UserGroup object to which this UserEquipment belongs.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">v_pos</span></td><td class="fieldArgDesc">three dimensional vector of position.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">v_vel</span></td><td class="fieldArgDesc">trhee dimensional vector of velocity.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if True print messages.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>For pretty printing.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.gen_traffic">
+    
+  </a>
+  <a name="gen_traffic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">gen_traffic</span>(self, nr_bits, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Adds bits to send as a "packet" into the packet queue.</p>
+<p>Though traffic is usually received from a traffic generator, this function allows to insert data packets manually, mainly for testing purposes.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_bits</span></td><td class="fieldArgDesc">number of bits in packet.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation instant time, for a timestamp.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.get_pos_vel">
+    
+  </a>
+  <a name="get_pos_vel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_pos_vel</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Returns vector of position and velocity.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">position vector, velocity vector.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.transmit">
+    
+  </a>
+  <a name="transmit">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">transmit</span>(self, ls_res, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>With resources available, inserts packets into transport blocks.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_res</span></td><td class="fieldArgDesc">list of resources assigned to this user equipment at a certain time.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation instant time, for a timestamp.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of transport blocks for this user equipment.</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.counter">
+    
+  </a>
+  <a name="counter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">counter</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Object creation counter, for unique object identifier.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.chan">
+    
+  </a>
+  <a name="chan">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">chan</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Channel assigned to this user equipment.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.chan_state">
+    
+  </a>
+  <a name="chan_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">chan_state</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Channel state in a certain instant.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.debug">
+    
+  </a>
+  <a name="debug">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">debug</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>If True prints debug messages.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.id_object">
+    
+  </a>
+  <a name="id_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_object</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>A unique object identifier.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.pkt_que">
+    
+  </a>
+  <a name="pkt_que">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pkt_que</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>The PacketQueue object to handle traffic for this user equipment.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.tr_blk">
+    
+  </a>
+  <a name="tr_blk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tr_blk</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Transport block object, determines number of bits to transmit.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.trf_gen">
+    
+  </a>
+  <a name="trf_gen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">trf_gen</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Traffic generator object, adds packets to user equipment queue.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.usr_grp">
+    
+  </a>
+  <a name="usr_grp">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">usr_grp</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>User group to which this user equipment belongs.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.v_pos">
+    
+  </a>
+  <a name="v_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">v_pos</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>User equipment position vector, numpy array type.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.usernode.UserEquipment.v_vel">
+    
+  </a>
+  <a name="v_vel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">v_vel</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>User equipment velocity vector, numpy array type.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for SimNet, a wireless network simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-03-04 18:34:21.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

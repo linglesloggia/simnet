@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>SimNet.libsimnet.basenode.Resource</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            SimNet, a wireless network simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="SimNet.html">SimNet</a></code><wbr></wbr>.<code><a href="SimNet.libsimnet.html">libsimnet</a></code><wbr></wbr>.<code><a href="SimNet.libsimnet.basenode.html">basenode</a></code><wbr></wbr>.<code><a href="SimNet.libsimnet.basenode.Resource.html">Resource</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Resource</span>:</code></p>
+        <p><a href="classIndex.html#SimNet.libsimnet.basenode.Resource">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>A communications resource.</p>
+<p>Determines the number of symbols that can be transmitted by this resource. A Resource is a set of time slots, frequency bands, etc. May have other properties depending on the technology.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id19">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td>For pretty printing.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_symbols">get_symbols</a></code></td>
+    <td>Determines quantity of symbols accepted for transmission.</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#counter">counter</a></code></td>
+    <td>Object creation counter, for unique object identifier.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#freq_id">freq_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#id_object">id_object</a></code></td>
+    <td>A unique object identifier.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#nr_sbands">nr_sbands</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#nr_slots">nr_slots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#res_type">res_type</a></code></td>
+    <td>The type of resource.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#syms_slot">syms_slot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, res_type=<span class="rst-variable-quote">'</span><span class="rst-variable-string">NoType</span><span class="rst-variable-quote">'</span>, syms_slot=1, nr_slots=1, nr_sbands=1):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">res_type</span></td><td class="fieldArgDesc">the type of resource.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">syms_slot</span></td><td class="fieldArgDesc">number of symbols in a slot.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_slots</span></td><td class="fieldArgDesc">number of slots.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_sbands</span></td><td class="fieldArgDesc">number of sub bands.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>For pretty printing.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.get_symbols">
+    
+  </a>
+  <a name="get_symbols">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_symbols</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Determines quantity of symbols accepted for transmission.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">quantity of symbols accepted for transmission.</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.counter">
+    
+  </a>
+  <a name="counter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">counter</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Object creation counter, for unique object identifier.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.freq_id">
+    
+  </a>
+  <a name="freq_id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">freq_id</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.id_object">
+    
+  </a>
+  <a name="id_object">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_object</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>A unique object identifier.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.nr_sbands">
+    
+  </a>
+  <a name="nr_sbands">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_sbands</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.nr_slots">
+    
+  </a>
+  <a name="nr_slots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">nr_slots</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.res_type">
+    
+  </a>
+  <a name="res_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">res_type</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>The type of resource.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.libsimnet.basenode.Resource.syms_slot">
+    
+  </a>
+  <a name="syms_slot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">syms_slot</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for SimNet, a wireless network simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-03-04 18:34:21.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

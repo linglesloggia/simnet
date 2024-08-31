@@ -1,0 +1,1 @@
+export PYTHONPATH=:/home/lingles/ownCloud/simnet_summer/simnet:/home/lingles/ownCloud/simnet_summer/simnet:/home/lingles/ownCloud/simnet_summer/simnet:/home/lingles/ownCloud/simnet_summer/simnet

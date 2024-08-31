@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>SimNet.sandbox.prioqueue.Action</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            SimNet, a wireless network simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="SimNet.html">SimNet</a></code><wbr></wbr>.<code><a href="SimNet.sandbox.html">sandbox</a></code><wbr></wbr>.<code><a href="SimNet.sandbox.prioqueue.html">prioqueue</a></code><wbr></wbr>.<code><a href="SimNet.sandbox.prioqueue.Action.html">Action</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Action</span>:</code></p>
+        <p><a href="classIndex.html#SimNet.sandbox.prioqueue.Action">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>An action to execute when an event calls for it.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id95">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#run">run</a></code></td>
+    <td>Executes an action.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#delay">delay</a></code></td>
+    <td>Intervals to skip before next execution.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#id_action">id_action</a></code></td>
+    <td>An identifier for this action.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#priority">priority</a></code></td>
+    <td>Order of execution in a certain round.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="SimNet.sandbox.prioqueue.Action.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, id_action, delay=1, priority=1):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">id_action</span></td><td class="fieldArgDesc">an identifier for this action.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">delay</span></td><td class="fieldArgDesc">how many simulation interval units to skip before another execution of this action.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">priority</span></td><td class="fieldArgDesc">the order of execution for this action among other possible actions to be executed in the same instance.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.sandbox.prioqueue.Action.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span>(self, rn):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Executes an action.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rn</span></td><td class="fieldArgDesc">round number.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an event item [next_round, priority, id_action] to add to the priority queue.</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.sandbox.prioqueue.Action.delay">
+    
+  </a>
+  <a name="delay">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">delay</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Intervals to skip before next execution.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.sandbox.prioqueue.Action.id_action">
+    
+  </a>
+  <a name="id_action">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">id_action</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>An identifier for this action.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.sandbox.prioqueue.Action.priority">
+    
+  </a>
+  <a name="priority">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">priority</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>Order of execution in a certain round.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for SimNet, a wireless network simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-03-04 18:34:21.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>SimNet.models.channel.pywich.qa_massive_v0</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            SimNet, a wireless network simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="module"><code><code><a href="SimNet.html">SimNet</a></code><wbr></wbr>.<code><a href="SimNet.models.html">models</a></code><wbr></wbr>.<code><a href="SimNet.models.channel.html">channel</a></code><wbr></wbr>.<code><a href="SimNet.models.channel.pywich.html">pywich</a></code><wbr></wbr>.<code><a href="SimNet.models.channel.pywich.qa_massive_v0.html">qa_massive_v0</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        module documentation
+      </div>
+
+      <div class="extrasDocstring">
+        
+        <p></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div><p>QA tests for the simulator classes.</p>
+<p>This scripts provide an easy way to test simulations in an example case comprising:</p>
+<ul class="rst-simple">
+<li>1 base station;</li>
+<li>2 slices;</li>
+<li>3 user groups, 2 assigned to slice 1, 1 assigned to slice 2.</li>
+</ul>
+<p>The following values can be adjusted as parameters; default values are provided:</p>
+<ul class="rst-simple">
+<li>number of user equipments in each user group;</li>
+<li>maximum length of packet queues, same for user equipments in each user group;</li>
+<li>keep or discard transmitted packets, same for user equipmens in each user group;</li>
+<li>number of packets to generate on each instance, same for user equipmens in each user group;</li>
+<li>quantity of resources Poor, Fair or Good to generate;</li>
+<li>an assignment matrix specifies quality and quantity of resources to hand out to slices.</li>
+</ul>
+<p>Transport block size, and hence number of packets it can contain, are determined from the following default values:</p>
+<ul class="rst-simple">
+<li>resources categories are Poor, Fair or Good, providing 22, 44, or 88 symbols respectively;</li>
+<li>channel state determines bits per symbol 0, 1, 2, 4 or 8 in a random sort of equal probability for each size;</li>
+<li>transport block size is bits per symbol * quantity of symbols;</li>
+<li>these allow for transport block sizes from 0 to 88*8=704 bits;</li>
+<li>since size of packets is 40 bits, a transport block may contain 0 to 17 packets.</li>
+</ul>
+<p>Function setup_sim creates the simulation scenery. Several test functions show how to verify the simulation scenery and run several types of simulation. This function also shows a way to create other possible sceneries in a relatively simple way, at least easier than defining every entity, which is the way to go for accurate scenery set up.</p>
+</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id61">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#config_sim">config_sim</a></code></td>
+    <td>Runs simulation on setup_sim receiving parameters.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#run_sim">run_sim</a></code></td>
+    <td>Runs simulation.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#select_model">select_model</a></code></td>
+    <td>Select simulation model, import classes accordingly.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#setup_sim">setup_sim</a></code></td>
+    <td>Creates simulation scenary with 2 slices and 3 user equipments.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#test_mass_run">test_mass_run</a></code></td>
+    <td>Massive test, run.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#test_mass_vrfy">test_mass_vrfy</a></code></td>
+    <td>Massive test, verify.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#ls_tests">ls_tests</a></code></td>
+    <td>List of tests to show in menu.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#model">model</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#op">op</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basefunction">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.config_sim">
+    
+  </a>
+  <a name="config_sim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">config_sim</span>(loss_prob=0.2, gen_delay=1, trans_delay=1, prs_uegr=[<wbr></wbr>1, <wbr></wbr>1, <wbr></wbr>2], ug_mxlen=[<wbr></wbr>5, <wbr></wbr>5, <wbr></wbr>5], ug_keep=[<wbr></wbr>True, <wbr></wbr>True, <wbr></wbr>True], ug_pkts=[<wbr></wbr>5, <wbr></wbr>5, <wbr></wbr>5], nr_res=[<wbr></wbr>4, <wbr></wbr>4, <wbr></wbr>4], assgn_mat=[], dbg_setup=[<wbr></wbr>True, <wbr></wbr>True, <wbr></wbr>True]):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Runs simulation on setup_sim receiving parameters.</p>
+<p>Allows to run a preset simulaton scenery specifying number of user equipments, queue properties, and resources. Assigns default values to all parameters.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">loss_prob</span></td><td class="fieldArgDesc">probability that a transport block is lost.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gen_delay</span></td><td class="fieldArgDesc">delay between packet generation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trans_delay</span></td><td class="fieldArgDesc">delay between transmissions.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prs_uegr</span></td><td class="fieldArgDesc">quantity of user equipments on each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_mxlen</span></td><td class="fieldArgDesc">user equipment queue maximum length, same for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_keep</span></td><td class="fieldArgDesc">whether to keep packets after transmission, same for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_pkts</span></td><td class="fieldArgDesc">quantity of packets to generate on each round, same for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_res</span></td><td class="fieldArgDesc">quantity of resources to generate, of qualities Poor, Fair, Good.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">assgn_mat</span></td><td class="fieldArgDesc">resource to slice assign matrix.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dbg_setup</span></td><td class="fieldArgDesc">debug options for setup.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.run_sim">
+    
+  </a>
+  <a name="run_sim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run_sim</span>(setup_obj, time_sim=5, dbg_run=True):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Runs simulation.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.select_model">
+    
+  </a>
+  <a name="select_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">select_model</span>(model=<span class="rst-variable-quote">'</span><span class="rst-variable-string">SimNetSimple</span><span class="rst-variable-quote">'</span>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Select simulation model, import classes accordingly.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc">name of simulation model; default SimNet simple simulation.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.setup_sim">
+    
+  </a>
+  <a name="setup_sim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup_sim</span>(loss_prob=0.0, gen_delay=1, trans_delay=1, prs_uegr=[], ug_mxlen=[], ug_keep=[], ug_pkts=[], nr_res=[], assgn_mat=[], dbg_setup=[]):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Creates simulation scenary with 2 slices and 3 user equipments.</p>
+<p>Default values are provided for each parameter; documentation in the code shows these default values. Configuration description is provided in a list <tt class="rst-docutils literal">ls_setup</tt>:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils literal">[setup_item] ::= [ class_name, nr_items, attach_to, ls_pars, ... ]</tt></li>
+</ul>
+<p>where <tt class="rst-docutils literal">ls_pars</tt> is a list of parameters for object constructors.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">loss_prob</span></td><td class="fieldArgDesc">probability that a transport block is lost in transmission.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gen_delay</span></td><td class="fieldArgDesc">delay between packet generation.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">trans_delay</span></td><td class="fieldArgDesc">delay between transmissions.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">prs_uegr</span></td><td class="fieldArgDesc">user group parameters, number of users in each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_mxlen</span></td><td class="fieldArgDesc">packet queues maximum length, for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_keep</span></td><td class="fieldArgDesc">packet queues, whether to keep packets or delete when transmitted, for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ug_pkts</span></td><td class="fieldArgDesc">quantity of packets to generate on each round, same for each user group.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">nr_res</span></td><td class="fieldArgDesc">quantity of resources to generate, of qualities Poor, Fair, Good.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">assgn_mat</span></td><td class="fieldArgDesc">resource to slice assignment matrix.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dbg_setup</span></td><td class="fieldArgDesc">debug options, for slice, for packet queue, values True or False.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a setup object, contains all entities and their relations to run the simulation.</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.test_mass_run">
+    
+  </a>
+  <a name="test_mass_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_mass_run</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Massive test, run.</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.test_mass_vrfy">
+    
+  </a>
+  <a name="test_mass_vrfy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">test_mass_vrfy</span>(fn_par=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Massive test, verify.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fn_par</span></td><td class="fieldArgDesc">paremeter to pass to function.</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.ls_tests">
+    
+  </a>
+  <a name="ls_tests">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_tests</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>List of tests to show in menu.</div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.model">
+    
+  </a>
+  <a name="model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">model</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="SimNet.models.channel.pywich.qa_massive_v0.op">
+    
+  </a>
+  <a name="op">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">op</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for SimNet, a wireless network simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-03-02 20:28:21.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

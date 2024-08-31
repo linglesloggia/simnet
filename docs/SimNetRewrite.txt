@@ -1,0 +1,117 @@
+===
+=== SimNet, classes and methods
+===
+
+List of all classes and their methods, with candidates for rewrite.
+
+
+List obtained with bash command:
+  egrep -e "^class|    def |def __init" *.py | cut -d: -f2-
+
+
+class BaseStation:
+    def __init__(self, id_base):
+    def mk_dc_res(self, res_type, res_qty, res_pars=[1, 1, 1]):
+    def show_dc_res(self):
+    def show_slices(self):
+    def __str__(self):
+
+class Slice():
+    def __init__(self, id_slc, loss_prob, trans_step=1, priority=2, debug=False):
+    def transmit_tbs(self, loss_prob, rn):
+        REWRITE
+    def run(self, rn):        
+    def __str__(self):
+
+class InterSliceSched():
+    def __init__(self, priority, debug=False):
+    def assign_slc_res(self, dc_slc, dc_res, assgn_mat): #, dc_sl_res):
+        REWRITE
+    def unassign_res(self, dc_res, dc_slc): #, dc_slc_res):
+    def run(self):
+    def show_dc_slc_res(self):
+    def __str__(self):
+
+class UserGroup:
+    def __init__ (self, id_usrgr, profile=""):
+    def __str__(self):
+
+class Resource:
+    def __init__(self, res_type="NoType", syms_slot=1, \
+    def get_symbols(self):
+        REWRITE
+    def __str__(self):
+
+class Scheduler:
+    def __init__(self):
+    def assign_res(self, ls_usrgrps, ls_res):
+        REWRITE
+    def show_ls_usr_res(self, ls_usr_res):
+    def __str__(self):
+
+class PacketQueue:
+    def __init__(self, qu_prefix="PQ-", pkt_prefix="Pkt-", max_len=0, keep_pkts=True):
+    def size_bits(self, data_pkt, bits_per_char=8):
+    def receive(self, data_pkt, t_stamp=-1):
+    def mk_trblk(self, tb_size, tb_prefix="TB-"):
+        REWRITE
+    def send_tb(self, tr_blk_id, action, t_stamp):
+        REWRITE
+    def send_pkt(self, t_stamp=-1):
+    def show_packet(self, packet):
+    def show_ls_pkts(self, list_type):
+    def show_trblk(self, tr_blk):
+    def show_pending(self):
+    def show_retrans(self):
+    def get_bits(self):
+    def show_counters(self):
+    def show_counters_ant(self):
+    def __str__(self):
+
+class Statistics:
+    def __init__(self, sim_obj):
+    def show_sent_rec(self):
+    def sim_totals(self, show=True):
+    def show_counters(self):
+    def show_usereq_stats(self):
+
+class Setup:
+    def __init__(self, ls_setup):
+    def mk_entities(self, debug=False):
+    def mk_ent_group(self, setup_item, debug=False):
+    def show_dc_objs(self):
+    def show_slices(self, bs_stat):
+    def show_trfgens(self):
+
+class Simulation:
+    def __init__(self, nr_rounds, gen_step, trans_step, setup_obj=None, \
+    def simnet_run(self, debug=False):
+
+class UserEquipment:
+    def __init__(self, usr_grp, v_pos=[0,0,0], v_vel=[0,0,0], debug=False):
+    def get_pos_vel(self):
+    def transmit(self, ls_res, rn):
+    def gen_traffic(self, nr_bits, rn):
+    def __str__(self):
+
+class ChannelEnvironment:
+        REWRITE
+
+class Channel:
+    def __init__(self, ch_env=None):
+    def get_chan_state(self, rn, v_pos=0.0, v_vel=0.0):
+        REWRITE
+    def get_sent(self, loss_prob):
+        REWRITE
+    def __str__(self):
+
+class TransportBlock:
+    def __init__(self):
+    def get_tb_size(self, nr_syms, chan_state):
+        REWRITE
+    def __str__(self):
+
+class TrafficGenerator():
+    def __init__(self, pktque, gen_size=10, gen_step=1, nr_pkts=1, priority=1, \
+    def run(self, rn):
+    def __str__(self):

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler</title>
+    <meta name="generator" content="pydoctor 21.12.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default">
+  
+  <div class="container">
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+          <span class="navbar-brand">
+            SimNet, a wireless network simulator <a href="index.html">API Documentation</a>
+          </span>
+
+          <a href="moduleIndex.html">
+            Modules
+          </a>
+
+          <a href="classIndex.html">
+            Classes
+          </a>
+
+          <a href="nameIndex.html">
+            Names
+          </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1 class="class"><code><code><a href="SimNet.html">SimNet</a></code><wbr></wbr>.<code><a href="SimNet.models.html">models</a></code><wbr></wbr>.<code><a href="SimNet.models.scheduler.html">scheduler</a></code><wbr></wbr>.<code><a href="SimNet.models.scheduler.rrscheduler.html">rrscheduler</a></code><wbr></wbr>.<code><a href="SimNet.models.scheduler.rrscheduler.rr_scheduler.html">rr_scheduler</a></code><wbr></wbr>.<code><a href="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.html">Scheduler</a></code></code></h1>
+        <div id="showPrivate">
+          <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+        </div>
+      </div>
+
+      <div class="categoryHeader">
+        class documentation
+      </div>
+
+      <div class="extrasDocstring">
+        <p><code><span class="py-keyword">class</span> <span class="py-defname">Scheduler</span>(<span title="libsimnet.basenode.Scheduler">Scheduler</span>):</code></p>
+        <p><a href="classIndex.html#SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler">View In Hierarchy</a></p>
+      </div>
+
+      <div class="moduleDocstring">
+        <div>A simple resource scheduler, assigns resources in round robin.</div>
+      </div>
+
+      <div id="splitTables">
+        <table class="children sortable" id="id71">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__">__init__</a></code></td>
+    <td>Constructor.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__">__str__</a></code></td>
+    <td>For pretty printing, on overwritten class.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#assign_res">assign_res</a></code></td>
+    <td>Builds a list of user equipments and resources for each user.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#resources_needed">resources_needed</a></code></td>
+    <td>Resources needed by an user equipment to transmit its packets.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_pointer">update_pointer</a></code></td>
+    <td>Updates pointer to user equipment.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#debug">debug</a></code></td>
+    <td>If True prints debug messages.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ls_usreqs">ls_usreqs</a></code></td>
+    <td>A list of UserEquipment objects.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ue_pointer">ue_pointer</a></code></td>
+    <td>A pointer to the next user equipment.</td>
+  </tr>
+</table>
+        
+
+          
+      </div>
+
+      <div id="childList">
+
+        <div class="basemethod">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span>(self, debug=False):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Constructor.<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">debug</span></td><td class="fieldArgDesc">if True prints messages</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>For pretty printing, on overwritten class.</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.assign_res">
+    
+  </a>
+  <a name="assign_res">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">assign_res</span>(self, ls_usreqs, ls_res, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Builds a list of user equipments and resources for each user.</p>
+<p>Receives a list of user equipment and a list of resources, goes through the list of user equipments groups and within it through each user equipment, assigns resources to each user equipment in round robin.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_usreqs</span></td><td class="fieldArgDesc">a list of UserEquipment objects.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_res</span></td><td class="fieldArgDesc">a list of Resource objects.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation time.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of [user equipment, resource, ... ] with as many resources as have been assigned to this user equipment, eventually none.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.resources_needed">
+    
+  </a>
+  <a name="resources_needed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">resources_needed</span>(self, ue, ls_res, time_t):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Resources needed by an user equipment to transmit its packets.</p>
+<p>Evaluates the number of resources the this user equipment can use and  the number of resources the user equipment needs to transmit all the packets in its queue.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ue</span></td><td class="fieldArgDesc">UserEquipment object.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ls_res</span></td><td class="fieldArgDesc">list of Resource objects.</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">time_t</span></td><td class="fieldArgDesc">simulation time.</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.update_pointer">
+    
+  </a>
+  <a name="update_pointer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update_pointer</span>(self):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div>Updates pointer to user equipment.</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.debug">
+    
+  </a>
+  <a name="debug">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">debug</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>If True prints debug messages.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.ls_usreqs">
+    
+  </a>
+  <a name="ls_usreqs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ls_usreqs</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>A list of UserEquipment objects.</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="SimNet.models.scheduler.rrscheduler.rr_scheduler.Scheduler.ue_pointer">
+    
+  </a>
+  <a name="ue_pointer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ue_pointer</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div>A pointer to the next user equipment.</div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for SimNet, a wireless network simulator,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    21.12.1 at 2024-03-04 18:34:21.
+  </div>
+</footer>
+
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
