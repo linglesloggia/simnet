@@ -16,9 +16,11 @@ This code is not optimized for execution, but for showing how to manually build 
 # import classes from the main library
 import sys,io,os,pickle
 
-sys.path.append('/content/drive/MyDrive/simnet')
 
 #sys.path.append('/home/lingles/ownCloud/Summer_school/simnet')
+ruta_libsimnet = "/home/lingles/ownCloud/Summer_school/simnet"
+if ruta_libsimnet not in sys.path:
+    sys.path.append(ruta_libsimnet)
 
 from libsimnet.simulator import Simulation
 from libsimnet.results import Statistics
@@ -46,6 +48,8 @@ import models.scheduler.maxcqisched.maxcqischeduler as sch_maxcqi
 import models.scheduler.pfscheduler.pfscheduler as sch_pf
 import models.scheduler.dqnscheduler.dqnschedulerlearner as sch_dqnlearn
 import models.scheduler.dqnscheduler.dqnscheduler as sch_dqn
+import models.scheduler.dr.dqnschedulerlearner as sch_drlearn
+import models.scheduler.dr.dqnscheduler as sch_dr
 
 from extensions.sim5gnr.gui.AppGui import ConfigScenary
 import extensions.sim5gnr.gui.AppGui as gui
@@ -233,6 +237,10 @@ class GuiConfigRunSimulation:
                 pt_sched = sch_dqn.Scheduler(ul_dl = "DL")
             if self.sched_type == "dqnlearn":
                 pt_sched = sch_dqnlearn.Scheduler(ul_dl = "DL")
+            if self.sched_type == "drlearn":
+                pt_sched = sch_drlearn.Scheduler(ul_dl = "DL")
+            if self.sched_type == "dr":
+                pt_sched = sch_dr.Scheduler(ul_dl = "DL")
                 
             pt_slc.sched_dl = pt_sched     # attach scheduler to Slice
         

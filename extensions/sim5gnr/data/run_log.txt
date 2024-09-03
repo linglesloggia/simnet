@@ -2,202 +2,141 @@
 
 === Starting simulation ===
 Time unit: ms; time unit in seconds: 0.001
-Simulation duration 100 ms
+Simulation duration 5 ms
 
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-ERROR in data packet length
-=== time 100 ms
-ERROR in data packet length
-ERROR in data packet length
+--- simulation time: 1 ms
+    Resources for UserEq UE-1: 5; packets to send: 1
+    TBs for UserEq UE-1:
 
-=== time 100 ms, simulation ended.
-    Simulation duration 0.199 s
+    Resources for UserEq UE-2: 5; packets to send: 1
+    TBs for UserEq UE-2:
+        TB_DL-0 :
+            ['PQ-2:Pkt-1', 1, 0.0, 200]
+--- simulation time: 2 ms
+    Resources for UserEq UE-3: 5; packets to send: 1
+    TBs for UserEq UE-3:
+
+    Resources for UserEq UE-4: 5; packets to send: 1
+    TBs for UserEq UE-4:
+        TB_DL-0 :
+            ['PQ-4:Pkt-1', 1, 0.0, 300]
+--- simulation time: 3 ms
+    Resources for UserEq UE-1: 5; packets to send: 2
+    TBs for UserEq UE-1:
+        TB_DL-0 :
+            ['PQ-1:Pkt-1', 1, 0.0, 200]
+            ['PQ-1:Pkt-2', 2, 0.0, 200]
+    Resources for UserEq UE-2: 5; packets to send: 1
+    TBs for UserEq UE-2:
+        TB_DL-1 :
+            ['PQ-2:Pkt-2', 2, 0.0, 200]
+--- simulation time: 4 ms
+    Resources for UserEq UE-1: 1; packets to send: 1
+    TBs for UserEq UE-1:
+
+    Resources for UserEq UE-3: 1; packets to send: 3
+    TBs for UserEq UE-3:
+        TB_DL-0 :
+            ['PQ-3:Pkt-1', 1, 0.0, 300]
+--- simulation time: 5 ms
+    Resources for UserEq UE-3: 5; packets to send: 3
+    TBs for UserEq UE-3:
+        TB_DL-1 :
+            ['PQ-3:Pkt-2', 2, 0.0, 300]
+            ['PQ-3:Pkt-3', 3, 0.0, 300]
+            ['PQ-3:Pkt-4', 4, 0.0, 300]
+    Resources for UserEq UE-4: 5; packets to send: 3
+    TBs for UserEq UE-4:
+
+
+=== time 5 ms, simulation ended.
+Simulation duration: 0.301
+
+=== Simulation results, queues final state ===
+
+Slice SL-1
+
+--- UserEquipment UE-1: packet queue PQ-1
+    -- Received packet list: received 5, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-1:Pkt-3            3.000       0.000            200        200
+    PQ-1:Pkt-4            4.000       0.000            200        200
+    PQ-1:Pkt-5            5.000       0.000            200        200
+    -- Retransmission dictionary:
+    -- Sent packet list: received 5, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   5        1000        200.000          0.000
+    Sent                       2         400        200.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           1        4992       4992.000          0.000
+    Transmission delay:        1.500
+
+--- UserEquipment UE-2: packet queue PQ-2
+    -- Received packet list: received 5, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-2:Pkt-3            3.000       0.000            200        200
+    PQ-2:Pkt-4            4.000       0.000            200        200
+    PQ-2:Pkt-5            5.000       0.000            200        200
+    -- Retransmission dictionary:
+    -- Sent packet list: received 5, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   5        1000        200.000          0.000
+    Sent                       2         400        200.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           2        9984       4992.000          0.000
+    Transmission delay:        0.500
+
+--- UserEquipment UE-3: packet queue PQ-3
+    -- Received packet list: received 5, sent 4, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-3:Pkt-5            5.000       0.000            300        300
+    -- Retransmission dictionary:
+    -- Sent packet list: received 5, sent 4, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   5        1500        300.000          0.000
+    Sent                       4        1200        300.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           2        5360       2680.000    5345344.000
+    Transmission delay:        2.250
+
+--- UserEquipment UE-4: packet queue PQ-4
+    -- Received packet list: received 5, sent 1, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-4:Pkt-2            2.000       0.000            300        300
+    PQ-4:Pkt-3            3.000       0.000            300        300
+    PQ-4:Pkt-4            4.000       0.000            300        300
+    PQ-4:Pkt-5            5.000       0.000            300        300
+    -- Retransmission dictionary:
+    -- Sent packet list: received 5, sent 1, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   5        1500        300.000          0.000
+    Sent                       1         300        300.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           1        4992       4992.000          0.000
+    Transmission delay:        1.000
+    Simulation duration 0.301 s
 Traffic counters
     Traffic              Packets        Bits         
-    Received                 240       72000
-    Sent                     233       69900
+    Received                  20        5000
+    Sent                       9        2300
     Lost                       0           0
     Dropped                    0           0
-    Transmission delay:        2.223
-Duration: simulation time 100, real time 0.199 s
+    Transmission delay:        1.556
+Duration: simulation time 5, real time 0.301 s
 ---------------------------------------------

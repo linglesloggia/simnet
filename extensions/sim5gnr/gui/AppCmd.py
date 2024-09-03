@@ -54,7 +54,7 @@ class ConfigScenary():
         self.uegr_par1 = [60,60] #* 2#,[60]]
         self.num_ues = [5,5]#,[5]]
 
-config_file = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/config.pickle"
+config_file = "../data/config.pickle"
 
 def load_config():
     if os.path.exists(config_file):
@@ -162,7 +162,7 @@ def run_simulation(conf, debug):
     with open(file_config, "wb") as fp:
         pickle.dump(conf, fp)
 
-    proc = subprocess.Popen(['python3', '/content/drive/MyDrive/simnet/extensions/sim5gnr/gui/mk_simsetup.py', file_config, "True", debug], stdout=subprocess.PIPE)
+    proc = subprocess.Popen(['python3', 'mk_simsetup.py', file_config, "True", debug], stdout=subprocess.PIPE)
     try:
         outs, errs = proc.communicate(timeout=600)
         print(outs.decode())
@@ -175,7 +175,7 @@ def view_config(conf):
     with open(file_config, "wb") as fp:
         pickle.dump(conf, fp)
 
-    proc = subprocess.Popen(['python3', '/content/drive/MyDrive/simnet/extensions/sim5gnr/gui/mk_simsetup.py', file_config, "False", "True"], stdout=subprocess.PIPE)
+    proc = subprocess.Popen(['python3', 'mk_simsetup.py', file_config, "False", "True"], stdout=subprocess.PIPE)
     try:
         outs, errs = proc.communicate(timeout=300)
         print(outs.decode())
@@ -251,10 +251,10 @@ def sum_ues(data1, data2):
 
 
 def process_and_graph_data(select, subselection, title):
-    file_rec = '/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_rec.txt'
-    file_tr = '/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_tr.txt'
-    file_res = '/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_res.txt'
-    file_queue = '/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_queue.txt'
+    file_rec = '../../data/run_results_rec.txt'
+    file_tr = '../../data/run_results_tr.txt'
+    file_res = '../../data/run_results_res.txt'
+    file_queue = '../../data/run_results_queue.txt'
 
     times_rec, bits_rec, bits_drop = [[]], [[]], [[]]
     times_tr, bits_sent, bits_lost = [[]], [[]], [[]]

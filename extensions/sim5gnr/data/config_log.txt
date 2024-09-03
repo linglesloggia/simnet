@@ -1,38 +1,48 @@
+=== Simulation scenery ===
+
+--- Base station and associated entities
+BaseStation BS-1, BS-1
+         InterSliceScheduler ISSched-1
+    5g res     Resource 5g RS-1, type PRB, syms 14, slots 1, sbands 12,band n258, dl 1, ul 0, long_cp 0
+     Slice 5g SL-1, SL-1:  delay 1, groups 0, res 0
+         Scheduler SCH-1, overwritten for DQN example
+     UserGroup UG-1, UG-1, profile {'lim_res': 60, 'res_type': 'PRB'}
          UserGroup UG-1, UG-1, profile {'lim_res': 60, 'res_type': 'PRB'}
              UserEq UE-1, v_pos=[0 0 0], v_vel=[0 0 0]
                  Channel rand_fix CH-1, loss prob 0.000, mode Random: -10 100
                      ChannelEnvironment
                  Transport block 5G  TB-1, band n258, fr 2, tdd 1
                  PacketQueue PQ-1, keep False, max 0; rec 0, sent 0, queue 0
-                 TrafficGenerator simple TG-1, gen size 300, delay 1, pkts 1
+                 TrafficGenerator simple TG-1, gen size 200, delay 1, pkts 1
              UserEq UE-2, v_pos=[0 0 0], v_vel=[0 0 0]
                  Channel rand_fix CH-2, loss prob 0.000, mode Random: -10 100
                      ChannelEnvironment
                  Transport block 5G  TB-2, band n258, fr 2, tdd 1
                  PacketQueue PQ-2, keep False, max 0; rec 0, sent 0, queue 0
-                 TrafficGenerator simple TG-2, gen size 300, delay 1, pkts 1
+                 TrafficGenerator simple TG-2, gen size 200, delay 1, pkts 1
+     UserGroup UG-2, UG-2, profile {'lim_res': 60, 'res_type': 'PRB'}
          UserGroup UG-2, UG-2, profile {'lim_res': 60, 'res_type': 'PRB'}
              UserEq UE-3, v_pos=[0 0 0], v_vel=[0 0 0]
                  Channel rand_fix CH-3, loss prob 0.000, mode Random: -10 100
                      ChannelEnvironment
                  Transport block 5G  TB-3, band n258, fr 2, tdd 1
                  PacketQueue PQ-3, keep False, max 0; rec 0, sent 0, queue 0
-                 TrafficGenerator simple TG-3, gen size 300, delay 5, pkts 1
+                 TrafficGenerator simple TG-3, gen size 300, delay 1, pkts 1
              UserEq UE-4, v_pos=[0 0 0], v_vel=[0 0 0]
                  Channel rand_fix CH-4, loss prob 0.000, mode Random: -10 100
                      ChannelEnvironment
                  Transport block 5G  TB-4, band n258, fr 2, tdd 1
                  PacketQueue PQ-4, keep False, max 0; rec 0, sent 0, queue 0
-                 TrafficGenerator simple TG-4, gen size 300, delay 5, pkts 1
+                 TrafficGenerator simple TG-4, gen size 300, delay 1, pkts 1
 --- Traffic generators list
-     TrafficGenerator simple TG-1, gen size 300, delay 1, pkts 1 Queue  PQ-1
-     TrafficGenerator simple TG-2, gen size 300, delay 1, pkts 1 Queue  PQ-2
-     TrafficGenerator simple TG-3, gen size 300, delay 5, pkts 1 Queue  PQ-3
-     TrafficGenerator simple TG-4, gen size 300, delay 5, pkts 1 Queue  PQ-4
+     TrafficGenerator simple TG-1, gen size 200, delay 1, pkts 1 Queue  PQ-1
+     TrafficGenerator simple TG-2, gen size 200, delay 1, pkts 1 Queue  PQ-2
+     TrafficGenerator simple TG-3, gen size 300, delay 1, pkts 1 Queue  PQ-3
+     TrafficGenerator simple TG-4, gen size 300, delay 1, pkts 1 Queue  PQ-4
 --- Slices list
-     Slice 5g SL-1, SL-1:  delay 1, groups 2, res 100
+     Slice 5g SL-1, SL-1:  delay 1, groups 2, res 10
 --- Dictionary of objects
      BS-1 BaseStation BS-1, BS-1
-     SL-1 Slice 5g SL-1, SL-1:  delay 1, groups 2, res 100
+     SL-1 Slice 5g SL-1, SL-1:  delay 1, groups 2, res 10
      UG-1 UserGroup UG-1, UG-1, profile {'lim_res': 60, 'res_type': 'PRB'}
      UG-2 UserGroup UG-2, UG-2, profile {'lim_res': 60, 'res_type': 'PRB'}

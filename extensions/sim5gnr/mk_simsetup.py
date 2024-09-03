@@ -24,7 +24,9 @@ from pylab import rcParams
 rcParams['figure.figsize'] = 11, 6
 #sns.set_theme(style = "whitegrid")
 
-
+ruta_libsimnet = "/home/lingles/ownCloud/Summer_school/simnet"
+if ruta_libsimnet not in sys.path:
+    sys.path.append(ruta_libsimnet)
 
 from libsimnet.simulator import Simulation
 from libsimnet.results import Statistics
@@ -62,11 +64,11 @@ class GuiConfigRunSimulation:
       
 
         #self.directory = "./extensions/sim5gnr/data/"
-        self.file_log_config = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/config_log.txt"
-        self.file_log_run = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_log.txt"
-        self.file_output_run_rec = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_rec.txt"
-        self.file_output_run_tr = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/data/run_results_tr.txt"
-        self.file_output_run_res = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_res.txt"
+        self.file_log_config = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/config_log.txt"
+        self.file_log_run = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_log.txt"
+        self.file_output_run_rec = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_rec.txt"
+        self.file_output_run_tr = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_tr.txt"
+        self.file_output_run_res = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_res.txt"
 
         self.output_config = open(self.file_log_config,'w')
 

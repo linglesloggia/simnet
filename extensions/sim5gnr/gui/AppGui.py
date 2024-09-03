@@ -61,15 +61,16 @@ path_list = script_path.split(os.sep)
 script_directory = path_list[0:len(path_list)-2] 
 directory = '/content/drive/MyDrive/simnet/extensions/sim5gnr'
 
-file_config = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/config.pickle"
-file_log_config = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/config_log.txt"
-file_log_run = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_log.txt"
-output_run_rec = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_rec.txt"
-output_run_tr = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_tr.txt"
-output_run_res = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_res.txt"
-output_run_ch_st = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_ch_st.txt"
-output_run_queue = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_queue.txt"
-output_run_names = "/content/drive/MyDrive/simnet/extensions/sim5gnr/data/run_results_names.txt"
+file_config = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/config.pickle"
+file_log_config = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/config_log.txt"
+file_log_run = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_log.txt"
+output_run_rec = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_rec.txt"
+output_run_tr = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_tr.txt"
+output_run_res = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_res.txt"
+output_run_ch_st = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_ch_st.txt"
+output_run_queue = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_queue.txt"
+output_run_names = "/home/lingles/ownCloud/Summer_school/simnet/extensions/sim5gnr/data/run_results_names.txt"
+
 
 class ConfigScenary():
     ''' The Scenary configuration.
@@ -283,7 +284,7 @@ class AppGui():
 
         file_conf = file_config # name of the configuration file
         run = "True" # if run the simulation or not
-        proc = subprocess.Popen(['python3', "/content/drive/MyDrive/simnet/extensions/sim5gnr/gui/mk_simsetup.py", file_conf,run,debug],stdout=subprocess.PIPE)
+        proc = subprocess.Popen(['python3', "mk_simsetup.py", file_conf,run,debug],stdout=subprocess.PIPE)
         try:
             outs, errs = proc.communicate(timeout=600)
             #tk.messagebox.showinfo(message="PyWinSim Simulation ends ")
