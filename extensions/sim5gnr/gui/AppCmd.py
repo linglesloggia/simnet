@@ -29,7 +29,7 @@ class ConfigScenary():
         self.name_resdl = ["PRB"]
         self.name_resul = ["PRB"]
 
-        self.slice_uegr = [[0,1]]
+        self.slice_uegr = [[0,1,2]]
         self.ugr_not_assigned = []
 
         self.channel_type = "random or fixed"
@@ -39,20 +39,20 @@ class ConfigScenary():
         self.val_2 = 100
         self.loss_prob = 0
 
-        self.trgen_type = ["poisson"]*2
-        self.inter_arrival = [1]*2
-        self.pkt_size = [300]*2
-        self.burst_size = [1]*2
-        self.size_dist = ["Exponential"]*2
+        self.trgen_type = ["poisson"]*3
+        self.inter_arrival = [1]*3
+        self.pkt_size = [300]*3
+        self.burst_size = [1]*3
+        self.size_dist = ["Exponential"]*3
 
         self.max_len = [0]
         self.keep_pkts = [False]
         self.last_k = [100]
 
-        self.nuegroups = 2
-        self.name_uegroup = ["UG-1","UG-2"]#,["UG-2"]]
-        self.uegr_par1 = [60,60] #* 2#,[60]]
-        self.num_ues = [5,5]#,[5]]
+        self.nuegroups = 3
+        self.name_uegroup = ["UG-1","UG-2","UG-3"]#,["UG-2"]]
+        self.uegr_par1 = [60,60,60] #* 2#,[60]]
+        self.num_ues = [5,5,5]#,[5]]
 
 config_file = "../data/config.pickle"
 
@@ -118,8 +118,8 @@ def configure_slices(conf, num_slices):
     conf.name_resul = ["PRB"] * int(num_slices)
     conf.slice_uegr = [[i] for i in range(int(num_slices))]
 
-    num_slices = 2
-    conf.slice_uegr = [[0,1]]
+    num_slices = 3
+    conf.slice_uegr = [[0,1,2]]
     conf.name_uegroup = ["UG-"+str(i+1) for i in range(int(num_slices))]
     conf.uegr_par1 = [50] * int(num_slices)
     conf.num_ues = [5] * int(num_slices)

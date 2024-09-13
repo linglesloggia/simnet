@@ -2,141 +2,563 @@
 
 === Starting simulation ===
 Time unit: ms; time unit in seconds: 0.001
-Simulation duration 5 ms
+Simulation duration 20 ms
 
 --- simulation time: 1 ms
-    Resources for UserEq UE-1: 5; packets to send: 1
-    TBs for UserEq UE-1:
-
-    Resources for UserEq UE-2: 5; packets to send: 1
-    TBs for UserEq UE-2:
-        TB_DL-0 :
-            ['PQ-2:Pkt-1', 1, 0.0, 200]
---- simulation time: 2 ms
-    Resources for UserEq UE-3: 5; packets to send: 1
-    TBs for UserEq UE-3:
-
-    Resources for UserEq UE-4: 5; packets to send: 1
+Time 1: Resource assignment complete
+State: [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+Selected action (allocation): 0
+Reward: -0.0
+Next state: [  0.   0.   0. 300. 300. 300.   0.   0.   0.   0.]
+    Resources for UserEq UE-4: 1; packets to send: 1
     TBs for UserEq UE-4:
         TB_DL-0 :
             ['PQ-4:Pkt-1', 1, 0.0, 300]
---- simulation time: 3 ms
-    Resources for UserEq UE-1: 5; packets to send: 2
-    TBs for UserEq UE-1:
-        TB_DL-0 :
-            ['PQ-1:Pkt-1', 1, 0.0, 200]
-            ['PQ-1:Pkt-2', 2, 0.0, 200]
-    Resources for UserEq UE-2: 5; packets to send: 1
-    TBs for UserEq UE-2:
-        TB_DL-1 :
-            ['PQ-2:Pkt-2', 2, 0.0, 200]
---- simulation time: 4 ms
-    Resources for UserEq UE-1: 1; packets to send: 1
-    TBs for UserEq UE-1:
+    Resources for UserEq UE-7: 1; packets to send: 0
+    TBs for UserEq UE-7:
 
-    Resources for UserEq UE-3: 1; packets to send: 3
+    Resources for UserEq UE-9: 2; packets to send: 0
+    TBs for UserEq UE-9:
+
+    Resources for UserEq UE-10: 1; packets to send: 0
+    TBs for UserEq UE-10:
+
+--- simulation time: 2 ms
+Time 2: Resource assignment complete
+State: [  0.   0.   0. 300. 300. 300.   0.   0.   0.   0.]
+Selected action (allocation): (0, 0, 0, 1, 0, 0, 1, 0, 2, 1)
+Reward: -3900.0
+Next state: [  0.   0.   0.   0. 300. 300.   0.   0.   0.   0.]
+    Resources for UserEq UE-5: 2; packets to send: 1
+    TBs for UserEq UE-5:
+        TB_DL-0 :
+            ['PQ-5:Pkt-1', 1, 0.0, 300]
+    Resources for UserEq UE-7: 2; packets to send: 0
+    TBs for UserEq UE-7:
+
+    Resources for UserEq UE-10: 1; packets to send: 0
+    TBs for UserEq UE-10:
+
+--- simulation time: 3 ms
+Time 3: Resource assignment complete
+State: [  0.   0.   0.   0. 300. 300.   0.   0.   0.   0.]
+Selected action (allocation): (0, 0, 0, 0, 2, 0, 2, 0, 0, 1)
+Reward: -2600.0
+Next state: [200. 200. 200. 300. 300. 600.   0.   0.   0.   0.]
+    Resources for UserEq UE-2: 1; packets to send: 1
+    TBs for UserEq UE-2:
+
+    Resources for UserEq UE-6: 1; packets to send: 2
+    TBs for UserEq UE-6:
+        TB_DL-0 :
+            ['PQ-6:Pkt-1', 1, 0.0, 300]
+            ['PQ-6:Pkt-2', 2, 0.0, 300]
+    Resources for UserEq UE-7: 2; packets to send: 0
+    TBs for UserEq UE-7:
+
+    Resources for UserEq UE-8: 1; packets to send: 0
+    TBs for UserEq UE-8:
+
+--- simulation time: 4 ms
+Time 4: Resource assignment complete
+State: [200. 200. 200. 300. 300. 600.   0.   0.   0.   0.]
+Selected action (allocation): (0, 1, 0, 0, 0, 1, 2, 1, 0, 0)
+Reward: -3800.0
+Next state: [200. 200. 200. 600. 600. 300.   0.   0.   0.   0.]
+    Resources for UserEq UE-4: 1; packets to send: 2
+    TBs for UserEq UE-4:
+        TB_DL-1 :
+            ['PQ-4:Pkt-2', 2, 0.0, 300]
+            ['PQ-4:Pkt-3', 3, 0.0, 300]
+    Resources for UserEq UE-9: 2; packets to send: 0
+    TBs for UserEq UE-9:
+
+    Resources for UserEq UE-10: 2; packets to send: 0
+    TBs for UserEq UE-10:
+
+--- simulation time: 5 ms
+Time 5: Resource assignment complete
+State: [200. 200. 200. 600. 600. 300.   0.   0.   0.   0.]
+Selected action (allocation): (0, 0, 0, 1, 0, 0, 0, 0, 2, 2)
+Reward: -4100.0
+Next state: [400. 400. 400. 300. 900. 600.   0.   0.   0.   0.]
+    Resources for UserEq UE-3: 1; packets to send: 2
     TBs for UserEq UE-3:
         TB_DL-0 :
-            ['PQ-3:Pkt-1', 1, 0.0, 300]
---- simulation time: 5 ms
-    Resources for UserEq UE-3: 5; packets to send: 3
-    TBs for UserEq UE-3:
-        TB_DL-1 :
-            ['PQ-3:Pkt-2', 2, 0.0, 300]
-            ['PQ-3:Pkt-3', 3, 0.0, 300]
-            ['PQ-3:Pkt-4', 4, 0.0, 300]
-    Resources for UserEq UE-4: 5; packets to send: 3
+            ['PQ-3:Pkt-1', 2, 0.0, 200]
+            ['PQ-3:Pkt-2', 4, 0.0, 200]
+    Resources for UserEq UE-4: 1; packets to send: 1
     TBs for UserEq UE-4:
 
+    Resources for UserEq UE-7: 1; packets to send: 0
+    TBs for UserEq UE-7:
 
-=== time 5 ms, simulation ended.
-Simulation duration: 0.301
+    Resources for UserEq UE-8: 1; packets to send: 0
+    TBs for UserEq UE-8:
+
+    Resources for UserEq UE-9: 1; packets to send: 0
+    TBs for UserEq UE-9:
+
+--- simulation time: 6 ms
+Time 6: Resource assignment complete
+State: [400. 400. 400. 300. 900. 600.   0.   0.   0.   0.]
+Selected action (allocation): (0, 0, 1, 1, 0, 0, 1, 1, 1, 0)
+Reward: -6000.0
+Next state: [ 400.  400.    0.  600. 1200.  900.  100.  100.  100.  100.]
+    Resources for UserEq UE-2: 2; packets to send: 2
+    TBs for UserEq UE-2:
+        TB_DL-0 :
+            ['PQ-2:Pkt-1', 2, 0.0, 200]
+            ['PQ-2:Pkt-2', 4, 0.0, 200]
+    Resources for UserEq UE-8: 2; packets to send: 1
+    TBs for UserEq UE-8:
+        TB_DL-0 :
+            ['PQ-8:Pkt-1', 5, 0.0, 100]
+    Resources for UserEq UE-9: 1; packets to send: 1
+    TBs for UserEq UE-9:
+        TB_DL-0 :
+            ['PQ-9:Pkt-1', 5, 0.0, 100]
+--- simulation time: 7 ms
+Time 7: Resource assignment complete
+State: [ 400.  400.    0.  600. 1200.  900.  100.  100.  100.  100.]
+Selected action (allocation): (0, 2, 0, 0, 0, 0, 0, 2, 1, 0)
+Reward: -3900.0
+Next state: [ 600.  200.  200.  900. 1500. 1200.  100.    0.    0.  100.]
+    Resources for UserEq UE-3: 5; packets to send: 1
+    TBs for UserEq UE-3:
+        TB_DL-1 :
+            ['PQ-3:Pkt-3', 6, 0.0, 200]
+--- simulation time: 8 ms
+Time 8: Resource assignment complete
+State: [ 600.  200.  200.  900. 1500. 1200.  100.    0.    0.  100.]
+Selected action (allocation): (0, 0, 5, 0, 0, 0, 0, 0, 0, 0)
+Reward: -4800.0
+Next state: [ 600.  200.    0. 1200. 1800. 1500.  100.    0.    0.  100.]
+    Resources for UserEq UE-3: 1; packets to send: 0
+    TBs for UserEq UE-3:
+
+    Resources for UserEq UE-6: 3; packets to send: 5
+    TBs for UserEq UE-6:
+        TB_DL-1 :
+            ['PQ-6:Pkt-3', 3, 0.0, 300]
+            ['PQ-6:Pkt-4', 4, 0.0, 300]
+            ['PQ-6:Pkt-5', 5, 0.0, 300]
+            ['PQ-6:Pkt-6', 6, 0.0, 300]
+            ['PQ-6:Pkt-7', 7, 0.0, 300]
+    Resources for UserEq UE-7: 1; packets to send: 1
+    TBs for UserEq UE-7:
+        TB_DL-0 :
+            ['PQ-7:Pkt-1', 5, 0.0, 100]
+--- simulation time: 9 ms
+Time 9: Resource assignment complete
+State: [ 600.  200.    0. 1200. 1800. 1500.  100.    0.    0.  100.]
+Selected action (allocation): (0, 0, 1, 0, 0, 3, 1, 0, 0, 0)
+Reward: -6500.0
+Next state: [ 800.  400.  200. 1500. 2100.  300.    0.    0.    0.  100.]
+Resetting simulation...
+    Resources for UserEq UE-2: 1; packets to send: 2
+    TBs for UserEq UE-2:
+
+    Resources for UserEq UE-6: 2; packets to send: 1
+    TBs for UserEq UE-6:
+
+    Resources for UserEq UE-9: 2; packets to send: 0
+    TBs for UserEq UE-9:
+
+--- simulation time: 10 ms
+Time 10: Resource assignment complete
+State: [ 800.  400.  200. 1500. 2100.  300.    0.    0.    0.  100.]
+Selected action (allocation): (0, 1, 0, 0, 0, 2, 0, 0, 2, 0)
+Reward: -8400.0
+Next state: [  0.   0.   0. 300. 300. 300.   0.   0.   0.   0.]
+    Resources for UserEq UE-3: 2; packets to send: 1
+    TBs for UserEq UE-3:
+
+    Resources for UserEq UE-8: 2; packets to send: 0
+    TBs for UserEq UE-8:
+
+    Resources for UserEq UE-10: 1; packets to send: 1
+    TBs for UserEq UE-10:
+
+--- simulation time: 11 ms
+Time 11: Resource assignment complete
+State: [  0.   0.   0. 300. 300. 300.   0.   0.   0.   0.]
+Selected action (allocation): (0, 0, 2, 0, 0, 0, 0, 2, 0, 1)
+Reward: -3900.0
+Next state: [200. 200. 200. 600. 600. 600. 100. 100. 100. 100.]
+    Resources for UserEq UE-2: 1; packets to send: 3
+    TBs for UserEq UE-2:
+
+    Resources for UserEq UE-3: 1; packets to send: 2
+    TBs for UserEq UE-3:
+        TB_DL-2 :
+            ['PQ-3:Pkt-5', 10, 0.0, 200]
+    Resources for UserEq UE-7: 2; packets to send: 1
+    TBs for UserEq UE-7:
+        TB_DL-1 :
+            ['PQ-7:Pkt-2', 10, 0.0, 100]
+    Resources for UserEq UE-10: 1; packets to send: 2
+    TBs for UserEq UE-10:
+        TB_DL-0 :
+            ['PQ-10:Pkt-2', 10, 0.0, 100]
+--- simulation time: 12 ms
+Time 12: Resource assignment complete
+State: [200. 200. 200. 600. 600. 600. 100. 100. 100. 100.]
+Selected action (allocation): (0, 1, 1, 0, 0, 0, 2, 0, 0, 1)
+Reward: -2800.0
+Next state: [200. 200.   0. 900. 900. 900.   0. 100. 100.   0.]
+    Resources for UserEq UE-3: 1; packets to send: 1
+    TBs for UserEq UE-3:
+
+    Resources for UserEq UE-4: 2; packets to send: 8
+    TBs for UserEq UE-4:
+
+    Resources for UserEq UE-5: 1; packets to send: 10
+    TBs for UserEq UE-5:
+
+    Resources for UserEq UE-8: 1; packets to send: 1
+    TBs for UserEq UE-8:
+        TB_DL-1 :
+            ['PQ-8:Pkt-2', 10, 0.0, 100]
+--- simulation time: 13 ms
+Time 13: Resource assignment complete
+State: [200. 200.   0. 900. 900. 900.   0. 100. 100.   0.]
+Selected action (allocation): (0, 0, 1, 2, 1, 0, 0, 1, 0, 0)
+Reward: -4300.0
+Next state: [ 400.  400.  200. 1200. 1200. 1200.    0.    0.  100.    0.]
+    Resources for UserEq UE-1: 1; packets to send: 6
+    TBs for UserEq UE-1:
+        TB_DL-0 :
+            ['PQ-1:Pkt-5', 10, 0.0, 200]
+            ['PQ-1:Pkt-6', 12, 0.0, 200]
+    Resources for UserEq UE-4: 1; packets to send: 9
+    TBs for UserEq UE-4:
+
+    Resources for UserEq UE-7: 2; packets to send: 0
+    TBs for UserEq UE-7:
+
+    Resources for UserEq UE-10: 1; packets to send: 1
+    TBs for UserEq UE-10:
+
+--- simulation time: 14 ms
+Time 14: Resource assignment complete
+State: [ 400.  400.  200. 1200. 1200. 1200.    0.    0.  100.    0.]
+Selected action (allocation): (1, 0, 0, 1, 0, 0, 2, 0, 0, 1)
+Reward: -6700.0
+Next state: [   0.  400.  200. 1500. 1500. 1500.    0.    0.  100.    0.]
+    Resources for UserEq UE-5: 2; packets to send: 12
+    TBs for UserEq UE-5:
+
+    Resources for UserEq UE-10: 3; packets to send: 1
+    TBs for UserEq UE-10:
+
+--- simulation time: 15 ms
+Time 15: Resource assignment complete
+State: [   0.  400.  200. 1500. 1500. 1500.    0.    0.  100.    0.]
+Selected action (allocation): (0, 0, 0, 0, 2, 0, 0, 0, 0, 3)
+Reward: -6200.0
+Next state: [ 200.  600.  400. 1800. 1800. 1800.    0.    0.  100.    0.]
+    Resources for UserEq UE-1: 1; packets to send: 5
+    TBs for UserEq UE-1:
+        TB_DL-1 :
+            ['PQ-1:Pkt-7', 14, 0.0, 200]
+    Resources for UserEq UE-4: 1; packets to send: 11
+    TBs for UserEq UE-4:
+        TB_DL-2 :
+            ['PQ-4:Pkt-9', 9, 0.0, 300]
+    Resources for UserEq UE-5: 3; packets to send: 13
+    TBs for UserEq UE-5:
+        TB_DL-1 :
+            ['PQ-5:Pkt-9', 9, 0.0, 300]
+            ['PQ-5:Pkt-10', 10, 0.0, 300]
+            ['PQ-5:Pkt-11', 11, 0.0, 300]
+            ['PQ-5:Pkt-12', 12, 0.0, 300]
+            ['PQ-5:Pkt-13', 13, 0.0, 300]
+            ['PQ-5:Pkt-14', 14, 0.0, 300]
+--- simulation time: 16 ms
+Time 16: Resource assignment complete
+State: [ 200.  600.  400. 1800. 1800. 1800.    0.    0.  100.    0.]
+Selected action (allocation): (1, 0, 0, 1, 3, 0, 0, 0, 0, 0)
+Reward: -6700.0
+Next state: [   0.  600.  400. 1800.  300. 2100.  100.  100.  200.  100.]
+Resetting simulation...
+    Resources for UserEq UE-4: 1; packets to send: 11
+    TBs for UserEq UE-4:
+
+    Resources for UserEq UE-5: 2; packets to send: 8
+    TBs for UserEq UE-5:
+
+    Resources for UserEq UE-9: 1; packets to send: 2
+    TBs for UserEq UE-9:
+
+    Resources for UserEq UE-10: 1; packets to send: 2
+    TBs for UserEq UE-10:
+
+--- simulation time: 17 ms
+Time 17: Resource assignment complete
+State: [   0.  600.  400. 1800.  300. 2100.  100.  100.  200.  100.]
+Selected action (allocation): (0, 0, 0, 1, 2, 0, 0, 0, 1, 1)
+Reward: -9700.0
+Next state: [200. 200. 200. 300. 300. 300.   0.   0.   0.   0.]
+    Resources for UserEq UE-2: 1; packets to send: 6
+    TBs for UserEq UE-2:
+        TB_DL-1 :
+            ['PQ-2:Pkt-8', 16, 0.0, 200]
+    Resources for UserEq UE-4: 1; packets to send: 12
+    TBs for UserEq UE-4:
+
+    Resources for UserEq UE-9: 3; packets to send: 2
+    TBs for UserEq UE-9:
+
+--- simulation time: 18 ms
+Time 18: Resource assignment complete
+State: [200. 200. 200. 300. 300. 300.   0.   0.   0.   0.]
+Selected action (allocation): (0, 1, 0, 1, 0, 0, 0, 0, 3, 0)
+Reward: -2500.0
+Next state: [200.   0. 200. 600. 600. 600.   0.   0.   0.   0.]
+    Resources for UserEq UE-2: 1; packets to send: 5
+    TBs for UserEq UE-2:
+
+    Resources for UserEq UE-4: 2; packets to send: 13
+    TBs for UserEq UE-4:
+        TB_DL-3 :
+            ['PQ-4:Pkt-16', 16, 0.0, 300]
+            ['PQ-4:Pkt-17', 17, 0.0, 300]
+    Resources for UserEq UE-9: 2; packets to send: 2
+    TBs for UserEq UE-9:
+
+--- simulation time: 19 ms
+Time 19: Resource assignment complete
+State: [200.   0. 200. 600. 600. 600.   0.   0.   0.   0.]
+Selected action (allocation): (0, 1, 0, 2, 0, 0, 0, 0, 2, 0)
+Reward: -4200.0
+Next state: [400. 200. 400. 300. 900. 900.   0.   0.   0.   0.]
+    Resources for UserEq UE-2: 1; packets to send: 6
+    TBs for UserEq UE-2:
+        TB_DL-2 :
+            ['PQ-2:Pkt-9', 18, 0.0, 200]
+    Resources for UserEq UE-7: 3; packets to send: 1
+    TBs for UserEq UE-7:
+
+    Resources for UserEq UE-10: 1; packets to send: 2
+    TBs for UserEq UE-10:
+
+--- simulation time: 20 ms
+Time 20: Resource assignment complete
+State: [400. 200. 400. 300. 900. 900.   0.   0.   0.   0.]
+Selected action (allocation): (0, 1, 0, 0, 0, 0, 3, 0, 0, 1)
+Reward: -5100.0
+Next state: [ 400.    0.  400.  600. 1200. 1200.    0.    0.    0.    0.]
+    Resources for UserEq UE-2: 1; packets to send: 5
+    TBs for UserEq UE-2:
+
+    Resources for UserEq UE-3: 1; packets to send: 5
+    TBs for UserEq UE-3:
+        TB_DL-3 :
+            ['PQ-3:Pkt-8', 16, 0.0, 200]
+            ['PQ-3:Pkt-9', 18, 0.0, 200]
+    Resources for UserEq UE-8: 1; packets to send: 1
+    TBs for UserEq UE-8:
+
+    Resources for UserEq UE-9: 2; packets to send: 2
+    TBs for UserEq UE-9:
+
+
+=== time 20 ms, simulation ended.
+Simulation duration: 4.256
 
 === Simulation results, queues final state ===
 
 Slice SL-1
 
 --- UserEquipment UE-1: packet queue PQ-1
-    -- Received packet list: received 5, sent 2, dropped 0 
+    -- Received packet list: received 10, sent 3, dropped 0 
     packet id          received        sent    pkt/bits          bits
-    PQ-1:Pkt-3            3.000       0.000            200        200
-    PQ-1:Pkt-4            4.000       0.000            200        200
-    PQ-1:Pkt-5            5.000       0.000            200        200
+    PQ-1:Pkt-8           16.000       0.000            200        200
+    PQ-1:Pkt-9           18.000       0.000            200        200
+    PQ-1:Pkt-10          20.000       0.000            200        200
     -- Retransmission dictionary:
-    -- Sent packet list: received 5, sent 2, dropped 0 
+    -- Sent packet list: received 10, sent 3, dropped 0 
     packet id          received        sent    pkt/bits          bits
     -- Counters:
 Traffic counters
     Traffic              Packets        Bits           Mean       Variance
-    Received                   5        1000        200.000          0.000
-    Sent                       2         400        200.000          0.000
+    Received                  10        2000        200.000          0.000
+    Sent                       3         600        200.000          0.000
     Lost                       0           0          0.000          0.000
     Dropped                    0           0          0.000          0.000
-    Transport Blocks           1        4992       4992.000          0.000
-    Transmission delay:        1.500
+    Transport Blocks           2        1968        984.000          0.000
+    Transmission delay:        1.667
 
 --- UserEquipment UE-2: packet queue PQ-2
-    -- Received packet list: received 5, sent 2, dropped 0 
+    -- Received packet list: received 10, sent 4, dropped 0 
     packet id          received        sent    pkt/bits          bits
-    PQ-2:Pkt-3            3.000       0.000            200        200
-    PQ-2:Pkt-4            4.000       0.000            200        200
-    PQ-2:Pkt-5            5.000       0.000            200        200
+    PQ-2:Pkt-10          20.000       0.000            200        200
     -- Retransmission dictionary:
-    -- Sent packet list: received 5, sent 2, dropped 0 
+    -- Sent packet list: received 10, sent 4, dropped 0 
     packet id          received        sent    pkt/bits          bits
     -- Counters:
 Traffic counters
     Traffic              Packets        Bits           Mean       Variance
-    Received                   5        1000        200.000          0.000
-    Sent                       2         400        200.000          0.000
+    Received                  10        2000        200.000          0.000
+    Sent                       4         800        200.000          0.000
     Lost                       0           0          0.000          0.000
     Dropped                    0           0          0.000          0.000
-    Transport Blocks           2        9984       4992.000          0.000
-    Transmission delay:        0.500
+    Transport Blocks           3        3440       1146.667     435640.889
+    Transmission delay:        2.000
 
 --- UserEquipment UE-3: packet queue PQ-3
-    -- Received packet list: received 5, sent 4, dropped 0 
+    -- Received packet list: received 10, sent 6, dropped 0 
     packet id          received        sent    pkt/bits          bits
-    PQ-3:Pkt-5            5.000       0.000            300        300
+    PQ-3:Pkt-10          20.000       0.000            200        200
     -- Retransmission dictionary:
-    -- Sent packet list: received 5, sent 4, dropped 0 
+    -- Sent packet list: received 10, sent 6, dropped 0 
     packet id          received        sent    pkt/bits          bits
     -- Counters:
 Traffic counters
     Traffic              Packets        Bits           Mean       Variance
-    Received                   5        1500        300.000          0.000
-    Sent                       4        1200        300.000          0.000
+    Received                  10        2000        200.000          0.000
+    Sent                       6        1200        200.000          0.000
     Lost                       0           0          0.000          0.000
     Dropped                    0           0          0.000          0.000
-    Transport Blocks           2        5360       2680.000    5345344.000
-    Transmission delay:        2.250
+    Transport Blocks           4        7536       1884.000    3247632.000
+    Transmission delay:        2.000
 
 --- UserEquipment UE-4: packet queue PQ-4
-    -- Received packet list: received 5, sent 1, dropped 0 
+    -- Received packet list: received 20, sent 6, dropped 0 
     packet id          received        sent    pkt/bits          bits
-    PQ-4:Pkt-2            2.000       0.000            300        300
-    PQ-4:Pkt-3            3.000       0.000            300        300
-    PQ-4:Pkt-4            4.000       0.000            300        300
-    PQ-4:Pkt-5            5.000       0.000            300        300
+    PQ-4:Pkt-18          18.000       0.000            300        300
+    PQ-4:Pkt-19          19.000       0.000            300        300
+    PQ-4:Pkt-20          20.000       0.000            300        300
     -- Retransmission dictionary:
-    -- Sent packet list: received 5, sent 1, dropped 0 
+    -- Sent packet list: received 20, sent 6, dropped 0 
     packet id          received        sent    pkt/bits          bits
     -- Counters:
 Traffic counters
     Traffic              Packets        Bits           Mean       Variance
-    Received                   5        1500        300.000          0.000
-    Sent                       1         300        300.000          0.000
+    Received                  20        6000        300.000          0.000
+    Sent                       6        1800        300.000          0.000
     Lost                       0           0          0.000          0.000
     Dropped                    0           0          0.000          0.000
-    Transport Blocks           1        4992       4992.000          0.000
+    Transport Blocks           4        4360       1090.000     354028.000
+    Transmission delay:        2.000
+
+--- UserEquipment UE-5: packet queue PQ-5
+    -- Received packet list: received 20, sent 7, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-5:Pkt-16          16.000       0.000            300        300
+    PQ-5:Pkt-17          17.000       0.000            300        300
+    PQ-5:Pkt-18          18.000       0.000            300        300
+    PQ-5:Pkt-19          19.000       0.000            300        300
+    PQ-5:Pkt-20          20.000       0.000            300        300
+    -- Retransmission dictionary:
+    -- Sent packet list: received 20, sent 7, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                  20        6000        300.000          0.000
+    Sent                       7        2100        300.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           2        4456       2228.000     559504.000
+    Transmission delay:        3.143
+
+--- UserEquipment UE-6: packet queue PQ-6
+    -- Received packet list: received 20, sent 7, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-6:Pkt-16          16.000       0.000            300        300
+    PQ-6:Pkt-17          17.000       0.000            300        300
+    PQ-6:Pkt-18          18.000       0.000            300        300
+    PQ-6:Pkt-19          19.000       0.000            300        300
+    PQ-6:Pkt-20          20.000       0.000            300        300
+    -- Retransmission dictionary:
+    -- Sent packet list: received 20, sent 7, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                  20        6000        300.000          0.000
+    Sent                       7        2100        300.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           2        3960       1980.000     992016.000
+    Transmission delay:        2.571
+
+--- UserEquipment UE-7: packet queue PQ-7
+    -- Received packet list: received 4, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-7:Pkt-4           20.000       0.000            100        100
+    -- Retransmission dictionary:
+    -- Sent packet list: received 4, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   4         400        100.000          0.000
+    Sent                       2         200        100.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           2        2248       1124.000     810000.000
+    Transmission delay:        2.000
+
+--- UserEquipment UE-8: packet queue PQ-8
+    -- Received packet list: received 4, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-8:Pkt-4           20.000       0.000            100        100
+    -- Retransmission dictionary:
+    -- Sent packet list: received 4, sent 2, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   4         400        100.000          0.000
+    Sent                       2         200        100.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           2        3008       1504.000     270400.000
+    Transmission delay:        1.500
+
+--- UserEquipment UE-9: packet queue PQ-9
+    -- Received packet list: received 4, sent 1, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-9:Pkt-4           20.000       0.000            100        100
+    -- Retransmission dictionary:
+    -- Sent packet list: received 4, sent 1, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   4         400        100.000          0.000
+    Sent                       1         100        100.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           1         288        288.000          0.000
     Transmission delay:        1.000
-    Simulation duration 0.301 s
+
+--- UserEquipment UE-10: packet queue PQ-10
+    -- Received packet list: received 4, sent 1, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    PQ-10:Pkt-4          20.000       0.000            100        100
+    -- Retransmission dictionary:
+    -- Sent packet list: received 4, sent 1, dropped 0 
+    packet id          received        sent    pkt/bits          bits
+    -- Counters:
+Traffic counters
+    Traffic              Packets        Bits           Mean       Variance
+    Received                   4         400        100.000          0.000
+    Sent                       1         100        100.000          0.000
+    Lost                       0           0          0.000          0.000
+    Dropped                    0           0          0.000          0.000
+    Transport Blocks           1         984        984.000          0.000
+    Transmission delay:        1.000
+    Simulation duration 4.256 s
 Traffic counters
     Traffic              Packets        Bits         
-    Received                  20        5000
-    Sent                       9        2300
+    Received                 106       25600
+    Sent                      39        9200
     Lost                       0           0
     Dropped                    0           0
-    Transmission delay:        1.556
-Duration: simulation time 5, real time 0.301 s
+    Transmission delay:        2.205
+Duration: simulation time 20, real time 4.256 s
 ---------------------------------------------

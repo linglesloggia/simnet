@@ -48,8 +48,11 @@ import models.scheduler.maxcqisched.maxcqischeduler as sch_maxcqi
 import models.scheduler.pfscheduler.pfscheduler as sch_pf
 import models.scheduler.dqnscheduler.dqnschedulerlearner as sch_dqnlearn
 import models.scheduler.dqnscheduler.dqnscheduler as sch_dqn
-import models.scheduler.dr.dqnschedulerlearner as sch_drlearn
-import models.scheduler.dr.dqnscheduler as sch_dr
+#import models.scheduler.dqn_dimensional_reduction.dqnschedulerlearner as sch_drlearn
+#import models.scheduler.dqn_dimensional_reduction.dqnscheduler as sch_dr
+
+import models.scheduler.ground_base_dqn.ground_base_learn as ground_base_learn
+import models.scheduler.ground_base_dqn.ground_base as ground_base
 
 from extensions.sim5gnr.gui.AppGui import ConfigScenary
 import extensions.sim5gnr.gui.AppGui as gui
@@ -241,7 +244,12 @@ class GuiConfigRunSimulation:
                 pt_sched = sch_drlearn.Scheduler(ul_dl = "DL")
             if self.sched_type == "dr":
                 pt_sched = sch_dr.Scheduler(ul_dl = "DL")
-                
+            if self.sched_type == 'ground_base':
+                pt_sched = ground_base.Scheduler(ul_dl = "DL")
+            if self.sched_type == 'ground_base_learn':
+                pt_sched = ground_base_learn.Scheduler(ul_dl = "DL")
+
+
             pt_slc.sched_dl = pt_sched     # attach scheduler to Slice
         
             if debug:
