@@ -39,6 +39,11 @@ import models.channel.randfixchan.randfix_chan  as fix_chenv
 import models.channel.filechannel.file_channel  as file_channel
 import models.channel.filechannel.file_chenv  as file_chenv
 
+#import the classes overwritten from abstract classes for the DQN scheduler
+
+import models.channel.randfixchan_dqn.randfix_chan_dqn as fix_chan_dqn
+import models.channel.randfixchan_dqn.randfix_chan_dqn as fix_chenv_dqn
+
 import models.trafficgen.simpletrfgen.simple_trfgen  as trf_simple
 import models.trafficgen.poissontrfgen.poisson_trfgen  as trf_poisson
 
@@ -292,9 +297,21 @@ class GuiConfigRunSimulation:
                     # create Channel, assign ChannelEnvironment to Channel, Channel to UserEquipment
                     # repeat for each UserEquipment
                     
+                    #create a if condition for first 11 characters are DQN_channel
+                    if self.channel_name[:11] == "DQN_channel":
+                        #the 12,13,14 characters are the val_1 of the channel
+                        val_1 = int(self.channel_name[12:14])
+                        #the 15,16,17 characters are the val_2 of the channel
+                        val_2 = int(self.channel_name[15:17])
+
+                        pt_ch_env = fix_chenv_dqn.ChannelEnvironment()
+                        usreq.chan = fix_chan_dqn.Channel(pt_ch_env, self.loss_prob,chan_mode=self.chan_mode,val_1 = val_1,val_2 = val_2)
+
+
                     if self.channel_name == "random or fixed":
                         pt_ch_env = fix_chenv.ChannelEnvironment()
                         usreq.chan = fix_chan.Channel(pt_ch_env, self.loss_prob,chan_mode=self.chan_mode,val_1=self.val_1,val_2=self.val_2) 
+                    
                     if self.channel_name == "file": 
                         pt_ch_env = file_chenv.ChannelEnvironment()
                         usreq.chan = file_channel.Channel(pt_ch_env, interpol=self.interpol, debug=debug, f_name=self.f_name,loss_prob=self.loss_prob)
@@ -329,7 +346,23 @@ class GuiConfigRunSimulation:
                     if self.trfgen_type[uegr] =="poisson":
                         pt_tg_obj = trf_poisson.TrafficGenerator(usreq.pktque_dl, gen_size=self.gen_size[uegr], \
                         gen_delay=self.gen_delay[uegr], nr_pkts=self.nr_pkts[uegr], priority=priority,size_dist=self.size_dist[uegr], debug=debug)      
-                        
+                    
+                    #if first 10 characters are DQN_trfgen
+                    if self.trfgen_type[uegr][:10] == "DQN_trfgen":
+                        val_1 = int(self.trfgen_type[uegr][11:13])
+                        val_2 = int(self.trfgen_type[uegr][14:16])
+
+                        pt_ch_env = fix_chenv_dqn.ChannelEnvironment()
+                        usreq.chan = fix_chan_dqn.Channel(pt_ch_env, self.loss_prob,chan_mode=self.chan_mode,val_1 = val_1,val_2 = val_2)
+
+                        pt_tg_obj = trf_simple.TrafficGenerator(usreq.pktque_dl, self.gen_size[uegr], \
+                        self.gen_delay[uegr], self.nr_pkts[uegr], priority, debug)
+
+
+
+
+
+
                     # add traffic generator to list of traffic generators
                     usreq.trf_gen = pt_tg_obj
                     self.ls_trfgen += [pt_tg_obj] # list of all traffic generators

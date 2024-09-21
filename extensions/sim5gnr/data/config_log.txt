@@ -9,19 +9,19 @@ BaseStation BS-1, BS-1
      UserGroup UG-1, UG-1, profile {'lim_res': 60, 'res_type': 'PRB'}
          UserGroup UG-1, UG-1, profile {'lim_res': 60, 'res_type': 'PRB'}
              UserEq UE-1, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-1, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-2, loss prob 0.000, mode Random: 30 1
                      ChannelEnvironment
                  Transport block 5G  TB-1, band n258, fr 2, tdd 1
                  PacketQueue PQ-1, keep False, max 0; rec 0, sent 0, queue 0
                  TrafficGenerator simple TG-1, gen size 200, delay 2, pkts 1
              UserEq UE-2, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-2, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-4, loss prob 0.000, mode Random: 30 1
                      ChannelEnvironment
                  Transport block 5G  TB-2, band n258, fr 2, tdd 1
                  PacketQueue PQ-2, keep False, max 0; rec 0, sent 0, queue 0
                  TrafficGenerator simple TG-2, gen size 200, delay 2, pkts 1
              UserEq UE-3, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-3, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-6, loss prob 0.000, mode Random: 30 1
                      ChannelEnvironment
                  Transport block 5G  TB-3, band n258, fr 2, tdd 1
                  PacketQueue PQ-3, keep False, max 0; rec 0, sent 0, queue 0
@@ -29,19 +29,19 @@ BaseStation BS-1, BS-1
      UserGroup UG-2, UG-2, profile {'lim_res': 60, 'res_type': 'PRB'}
          UserGroup UG-2, UG-2, profile {'lim_res': 60, 'res_type': 'PRB'}
              UserEq UE-4, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-4, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-8, loss prob 0.000, mode Random: 20 1
                      ChannelEnvironment
                  Transport block 5G  TB-4, band n258, fr 2, tdd 1
                  PacketQueue PQ-4, keep False, max 0; rec 0, sent 0, queue 0
                  TrafficGenerator simple TG-4, gen size 300, delay 1, pkts 1
              UserEq UE-5, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-5, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-10, loss prob 0.000, mode Random: 20 1
                      ChannelEnvironment
                  Transport block 5G  TB-5, band n258, fr 2, tdd 1
                  PacketQueue PQ-5, keep False, max 0; rec 0, sent 0, queue 0
                  TrafficGenerator simple TG-5, gen size 300, delay 1, pkts 1
              UserEq UE-6, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-6, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-12, loss prob 0.000, mode Random: 20 1
                      ChannelEnvironment
                  Transport block 5G  TB-6, band n258, fr 2, tdd 1
                  PacketQueue PQ-6, keep False, max 0; rec 0, sent 0, queue 0
@@ -49,25 +49,25 @@ BaseStation BS-1, BS-1
      UserGroup UG-2, UG-3, profile {'lim_res': 60, 'res_type': 'PRB'}
          UserGroup UG-2, UG-3, profile {'lim_res': 60, 'res_type': 'PRB'}
              UserEq UE-7, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-7, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-14, loss prob 0.000, mode Random: 10 1
                      ChannelEnvironment
                  Transport block 5G  TB-7, band n258, fr 2, tdd 1
                  PacketQueue PQ-7, keep False, max 0; rec 0, sent 0, queue 0
                  TrafficGenerator simple TG-7, gen size 100, delay 5, pkts 1
              UserEq UE-8, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-8, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-16, loss prob 0.000, mode Random: 10 1
                      ChannelEnvironment
                  Transport block 5G  TB-8, band n258, fr 2, tdd 1
                  PacketQueue PQ-8, keep False, max 0; rec 0, sent 0, queue 0
                  TrafficGenerator simple TG-8, gen size 100, delay 5, pkts 1
              UserEq UE-9, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-9, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-18, loss prob 0.000, mode Random: 10 1
                      ChannelEnvironment
                  Transport block 5G  TB-9, band n258, fr 2, tdd 1
                  PacketQueue PQ-9, keep False, max 0; rec 0, sent 0, queue 0
                  TrafficGenerator simple TG-9, gen size 100, delay 5, pkts 1
              UserEq UE-10, v_pos=[0 0 0], v_vel=[0 0 0]
-                 Channel rand_fix CH-10, loss prob 0.000, mode Random: -10 100
+                 Channel rand_fix CH-20, loss prob 0.000, mode Random: 10 1
                      ChannelEnvironment
                  Transport block 5G  TB-10, band n258, fr 2, tdd 1
                  PacketQueue PQ-10, keep False, max 0; rec 0, sent 0, queue 0

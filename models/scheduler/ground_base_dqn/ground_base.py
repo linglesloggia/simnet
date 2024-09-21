@@ -113,9 +113,9 @@ class Scheduler(Scheduler):
         # Get the corresponding action (tuple) from the actions list
         selected_action = self.actions[action_idx]  # This is a tuple like (2, 0, 1)
 
-        print('State tensor:', state_tensor)
-        print('Action index:', action_idx)
-        print('Selected action:', selected_action)
+        #print('State tensor:', state_tensor)
+        #print('Action index:', action_idx)
+        #print('Selected action:', selected_action)
 
         # Assign resources based on selected_action
         ls_res_tmp = list(ls_res)

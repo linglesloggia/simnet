@@ -130,7 +130,7 @@ class Scheduler(Scheduler):
 
             #next_state = np.array([sum(ue.pktque_dl.size_bits(pkt) for pkt in ue.pktque_dl.ls_recvd) for ue in ls_usreqs], dtype=np.float32)
             #next_state = self.flatten_state(next_state)
-            reward = -np.sum(self.state_memory) - self.penalty # You can adjust this reward function
+            reward = -np.sum(self.state_memory) #- self.penalty # You can adjust this reward function
         except Exception as e:
             if self.debug:
                 print(f"Error calculating next state or reward: {e}")
